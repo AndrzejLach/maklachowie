@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uzbekistan — Jedwabny Szlak · Wrzesień 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#B8860B;--gold-light:#FDF5DC;--gold-mid:#F5C842;
+  --teal:#1A6B5A;--teal-light:#D4EFE6;
+  --rust:#A0522D;--rust-light:#FAE8DC;
+  --navy:#0D1B2A;--sand:#F9F5EE;--muted:#6b7280;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--sand);color:var(--navy);line-height:1.6}
+
+.hero{background:var(--navy);color:white;min-height:94vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 60%,rgba(184,134,11,.22) 0%,transparent 65%),radial-gradient(ellipse 50% 40% at 80% 35%,rgba(26,107,90,.2) 0%,transparent 65%);pointer-events:none}
+.hero-arch{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;opacity:.04;font-size:22rem;line-height:1;pointer-events:none;user-select:none}
+.hero-eye{font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1.25rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,8vw,6rem);font-weight:700;line-height:1.0;letter-spacing:-.02em;margin-bottom:.4rem}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--gold-mid)}
+.hero-sub{font-family:'Playfair Display',serif;font-size:clamp(.95rem,2vw,1.2rem);font-style:italic;color:rgba(255,255,255,.55);margin-bottom:2.5rem}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem}
+.hm .v{display:block;font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:600;line-height:1}
+.hm .l{display:block;font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.25rem}
+.hero-chapters{display:flex;border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
+.hc{padding:.65rem 1.3rem;font-size:.68rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+.hc-1{background:rgba(184,134,11,.25);color:#F5D68A}
+.hc-2{background:rgba(160,82,45,.25);color:#F5B89A}
+.hc-3{background:rgba(26,107,90,.25);color:#74DEBC}
+.hero-scroll{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.22);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.3rem}
+.hero-scroll::after{content:'';width:1px;height:2rem;background:rgba(255,255,255,.18);animation:pl 2s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:.2}50%{opacity:.6}}
+
+.container{max-width:860px;margin:0 auto;padding:0 1.5rem}
+
+.summary{background:white;border-bottom:1px solid rgba(0,0,0,.06);padding:2.5rem 0}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr))}
+.si{padding:.9rem 1rem;border-right:1px solid rgba(0,0,0,.07)}
+.si:last-child{border-right:none}
+.sl{font-size:.58rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.sv{font-family:'Playfair Display',serif;font-size:.88rem;font-weight:600;color:var(--navy);line-height:1.3}
+.ss{font-size:.68rem;color:var(--muted);margin-top:.1rem}
+
+/* ROUTE MAP */
+.routemap{background:var(--navy);padding:1.5rem 2rem;text-align:center;color:white;font-size:.78rem}
+.routemap-inner{display:flex;align-items:center;justify-content:center;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.rm-city{text-align:center}
+.rm-city .cn{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:600}
+.rm-city .cs{font-size:.58rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.07em}
+.rm-arr{color:var(--gold-mid);font-size:.9rem;display:flex;flex-direction:column;align-items:center;gap:.1rem}
+.rm-arr .ra{font-size:.55rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.35);white-space:nowrap}
+
+.sh{padding:3.5rem 0 1.75rem}
+.se{display:flex;align-items:center;gap:.55rem;font-size:.63rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.5rem}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.d-gold{background:var(--gold)} .d-rust{background:var(--rust)} .d-teal{background:var(--teal)} .d-coral{background:#E8613A}
+.e-gold{color:var(--gold)} .e-rust{color:var(--rust)} .e-teal{color:var(--teal)} .e-coral{color:#E8613A}
+.sh h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.7rem);font-weight:700;line-height:1.1;color:var(--navy)}
+.sh p{font-size:.87rem;color:var(--muted);margin-top:.4rem;font-style:italic}
+
+.note{border-radius:9px;padding:.9rem 1.1rem;margin-bottom:1.25rem;font-size:.82rem;line-height:1.65}
+.n-gold{background:var(--gold-light);border:1px solid rgba(184,134,11,.2);color:#5a3a08}
+.n-teal{background:var(--teal-light);border:1px solid rgba(26,107,90,.2);color:#0e4a35}
+.n-rust{background:var(--rust-light);border:1px solid rgba(160,82,45,.2);color:#5a2010}
+
+.days{padding-bottom:2.5rem}
+.dc{display:grid;grid-template-columns:68px 1fr;gap:0 1.1rem}
+.dl{display:flex;flex-direction:column;align-items:center;padding-top:1rem}
+.dn{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:white;flex-shrink:0}
+.dn-gold{background:var(--gold)} .dn-rust{background:var(--rust)} .dn-teal{background:var(--teal)}
+.dline{width:1px;flex:1;min-height:1rem;margin-top:5px}
+.dl-gold{background:rgba(184,134,11,.2)} .dl-rust{background:rgba(160,82,45,.2)} .dl-teal{background:rgba(26,107,90,.2)}
+.dr{background:white;border:1px solid rgba(0,0,0,.06);border-radius:10px;padding:1.05rem 1.25rem;margin-bottom:.55rem}
+.dm{font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.dt{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:.3rem;line-height:1.3}
+.dd{font-size:.845rem;color:#4b5563;line-height:1.65}
+.tag{display:inline-block;font-size:.6rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-top:.45rem;margin-right:3px}
+.t-gold{background:var(--gold-light);color:#6b4500}
+.t-rust{background:var(--rust-light);color:#6b2010}
+.t-teal{background:var(--teal-light);color:#0a4a35}
+
+.xfer{background:var(--navy);padding:2rem 1.5rem;text-align:center;color:white;margin:.5rem 0;position:relative;overflow:hidden}
+.xfer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 50% 50%,rgba(184,134,11,.15) 0%,transparent 70%);pointer-events:none}
+.xe{font-size:.63rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-mid);margin-bottom:.55rem}
+.xfer h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:.9rem}
+.route{display:flex;align-items:center;justify-content:center;gap:.9rem;flex-wrap:wrap}
+.rp .pn{font-family:'Playfair Display',serif;font-size:.92rem;font-weight:600}
+.rp .ps{font-size:.6rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.07em}
+.al{width:50px;height:1px;background:var(--gold-mid);position:relative;margin:0 auto}
+.al::after{content:'›';position:absolute;right:-4px;top:-9px;font-size:1rem;color:var(--gold-mid)}
+.alb{font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:.15rem;white-space:nowrap}
+.xn{font-size:.73rem;color:rgba(255,255,255,.33);margin-top:.8rem}
+
+.prac{padding:4rem 0;background:white;border-top:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06)}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1.1rem;margin-top:1.75rem}
+.pc{border:1px solid rgba(0,0,0,.08);border-radius:10px;padding:1.2rem}
+.pi{font-size:1.2rem;margin-bottom:.55rem}
+.pt{font-family:'Playfair Display',serif;font-size:.93rem;font-weight:600;color:var(--navy);margin-bottom:.3rem}
+.pd{font-size:.79rem;color:#4b5563;line-height:1.6}
+
+.budget{padding:4rem 0}
+.bt{width:100%;border-collapse:collapse;margin-top:1.75rem;font-size:.87rem}
+.bt tr{border-bottom:1px solid rgba(0,0,0,.06)}
+.bt td{padding:.65rem .5rem;color:#374151}
+.bt td:last-child{text-align:right;font-weight:500;color:var(--navy);white-space:nowrap}
+.bsec td{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:1rem;padding-bottom:.2rem;border-bottom:none}
+.btotal td{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);border-top:2px solid var(--navy);border-bottom:none;padding-top:.8rem}
+.bpp td{font-size:.77rem;color:var(--muted);font-style:italic;border-bottom:none;padding-top:.2rem}
+
+.alert{background:var(--rust-light);border:1px solid rgba(160,82,45,.2);border-radius:10px;padding:1.1rem 1.3rem;font-size:.83rem;color:#5a2010;line-height:1.65}
+.vs{background:var(--gold-light);border:1px solid rgba(184,134,11,.2);border-radius:10px;padding:1.1rem 1.3rem;font-size:.83rem;color:#5a3a08;line-height:1.65}
+
+.divider{border:none;border-top:1px solid rgba(0,0,0,.07);margin:2rem 0}
+
+footer{background:var(--navy);color:rgba(255,255,255,.32);text-align:center;padding:2rem;font-size:.75rem;letter-spacing:.04em}
+footer span{color:var(--gold-mid)}
+
+@media(max-width:600px){
+  .sg{grid-template-columns:1fr 1fr}
+  .si{border-right:none;border-bottom:1px solid rgba(0,0,0,.07)}
+  .si:nth-child(odd){border-right:1px solid rgba(0,0,0,.07)}
+  .dc{grid-template-columns:42px 1fr;gap:0 .6rem}
+  .hero-chapters{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){.hero-scroll::after{animation:none}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-arch">☽</div>
+  <p class="hero-eye">Plan wyjazdu · Wrzesień 2026 · Wariant Uzbekistan</p>
+  <h1>Jedwabny<br><em>Szlak</em></h1>
+  <p class="hero-sub">Taszkent · Samarkanda · Buchara — trzy perły Azji Środkowej</p>
+  <div class="hero-meta">
+    <div class="hm"><span class="v">12</span><span class="l">nocy</span></div>
+    <div class="hm"><span class="v">3</span><span class="l">osoby</span></div>
+    <div class="hm"><span class="v">17–29</span><span class="l">września</span></div>
+    <div class="hm"><span class="v">3</span><span class="l">miasta</span></div>
+  </div>
+  <div class="hero-chapters">
+    <div class="hc hc-1">I · Taszkent · 2 noce</div>
+    <div class="hc hc-2">II · Samarkanda · 5 nocy</div>
+    <div class="hc hc-3">III · Buchara · 4 noce</div>
+  </div>
+  <div class="hero-scroll">scroll</div>
+</section>
+
+<section class="summary">
+  <div class="container">
+    <div class="sg">
+      <div class="si"><div class="sl">Wylot</div><div class="sv">GDN → TAS</div><div class="ss">17 wrz, z przesiadką</div></div>
+      <div class="si"><div class="sl">Baza I</div><div class="sv">Taszkent</div><div class="ss">2 noce · hotel 3–4*</div></div>
+      <div class="si"><div class="sl">Pociąg Afrosiyob</div><div class="sv">TAS → Samarkanda</div><div class="ss">~2 godz. · ~90 zł/os.</div></div>
+      <div class="si"><div class="sl">Baza II</div><div class="sv">Samarkanda</div><div class="ss">5 nocy · hotel przy Registanie</div></div>
+      <div class="si"><div class="sl">Pociąg Afrosiyob</div><div class="sv">Samarkanda → Buchara</div><div class="ss">~2,5 godz. · ~120 zł/os.</div></div>
+      <div class="si"><div class="sl">Baza III</div><div class="sv">Buchara</div><div class="ss">4 noce · riad / boutique</div></div>
+      <div class="si"><div class="sl">Powrót</div><div class="sv">TAS → GDN</div><div class="ss">29 wrz, z przesiadką</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="routemap">
+  <div style="font-size:.6rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.4rem">Trasa koleją dużych prędkości Afrosiyob</div>
+  <div class="routemap-inner">
+    <div class="rm-city"><div class="cn">Taszkent</div><div class="cs">stolica · wylot/powrót</div></div>
+    <div class="rm-arr"><div>→</div><div class="ra">~2 godz.</div></div>
+    <div class="rm-city"><div class="cn">Samarkanda</div><div class="cs">Registan · meczety</div></div>
+    <div class="rm-arr"><div>→</div><div class="ra">~2,5 godz.</div></div>
+    <div class="rm-city"><div class="cn">Buchara</div><div class="cs">stare miasto UNESCO</div></div>
+    <div class="rm-arr"><div>→</div><div class="ra">~4,5 godz.</div></div>
+    <div class="rm-city"><div class="cn">Taszkent</div><div class="cs">powrót · lot do GDN</div></div>
+  </div>
+</div>
+
+<!-- TASZKENT -->
+<section>
+  <div class="container">
+    <div class="sh">
+      <div class="se e-gold"><span class="dot d-gold"></span>Część pierwsza — Taszkent</div>
+      <h2>Dwie noce<br><em style="font-style:italic;font-weight:400">brama do Jedwabnego Szlaku</em></h2>
+      <p>Baza: centrum Taszkentu — nowoczesna stolica z sowiecką architekturą i orientalnymi bazarami</p>
+    </div>
+    <div class="note n-gold">Taszkent to główny hub lotniczy — tu lądujecie i stąd wracacie. 2 noce wystarczą żeby poczuć miasto: Bazar Chorsu, meczet Hazrat Imam i sowieckie centrum to zupełnie inna estetyka niż Samarkanda czy Buchara — warto zobaczyć kontrast.</div>
+    <div class="days">
+      <div class="dc">
+        <div class="dl"><div class="dn dn-gold">1</div><div class="dline dl-gold"></div></div>
+        <div class="dr">
+          <div class="dm">17 wrz · czwartek</div>
+          <div class="dt">Przylot — wieczorny spacer po Taszkencie</div>
+          <div class="dd">Lot z Gdańska przez Stambuł (Turkish Airlines) lub Dubaj (Emirates/flydubai). Zameldowanie w hotelu. Wieczorny spacer po centrum — plac Amir Timur, fontanny, pierwsze czajchainy. Kolacja z plovem i szaszłykami.</div>
+          <span class="tag t-gold">Przylot</span><span class="tag t-gold">Centrum</span>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="dl"><div class="dn dn-gold">2</div><div class="dline dl-gold"></div></div>
+        <div class="dr">
+          <div class="dm">18 wrz · piątek</div>
+          <div class="dt">Bazar Chorsu · Hazrat Imam · Metro Taszkent</div>
+          <div class="dd">Bazar Chorsu — jeden z największych orientalnych bazarów Azji Środkowej pod kopułami. Kompleks Hazrat Imam (Khast Imam) — historyczne centrum islamskie z XVI-wiecznym Koranem Osmana. Metro Taszkent — stacje jak pałace z mozaikami z lat 70. Wieczór: kolacja w Chilonzorze — lokalna, bez turystów.</div>
+          <span class="tag t-gold">Bazar Chorsu</span><span class="tag t-gold">Hazrat Imam</span><span class="tag t-gold">Metro</span>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="dl"><div class="dn dn-gold">3</div></div>
+        <div class="dr">
+          <div class="dm">19 wrz · sobota</div>
+          <div class="dt">Pociąg Afrosiyob do Samarkandy</div>
+          <div class="dd">Rano: szybki spacer po Muzeum Historii Uzbekistanu (opcja). Pociąg Afrosiyob TAS → SamarkandA — pociąg dużych prędkości Talgo 250, ~2 godz., klasa Business ~90 zł/os. Widoki na step i góry Tienszanu. Zameldowanie w Samarkandzie po południu.</div>
+          <span class="tag t-gold">Afrosiyob ✦</span><span class="tag t-gold">~2 godz.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFER 1 -->
+<div class="xfer">
+  <p class="xe">Transfer I · 19 września</p>
+  <h3>Pociąg Afrosiyob — Taszkent → Samarkanda</h3>
+  <div class="route">
+    <div class="rp"><div class="pn">Taszkent</div><div class="ps">Stolica · Uzbekistan</div></div>
+    <div><div class="al"></div><div class="alb">~2 godz. · Talgo 250</div></div>
+    <div class="rp"><div class="pn">Samarkanda</div><div class="ps">Jedwabny Szlak</div></div>
+  </div>
+  <p class="xn">Bilet klasa Business ~90 zł/os. · Rezerwuj przez e-ticket.railway.uz z 30–40 dni wyprzedzeniem</p>
+</div>
+
+<!-- SAMARKANDA -->
+<section>
+  <div class="container">
+    <div class="sh">
+      <div class="se e-rust"><span class="dot d-rust"></span>Część druga — Samarkanda</div>
+      <h2>Pięć nocy<br><em style="font-style:italic;font-weight:400">miasto Tamerlana i Registanu</em></h2>
+      <p>Baza: centrum Samarkandy, okolice Registanu — wszystko pieszo</p>
+    </div>
+    <div class="note n-rust">✦ <strong>Registan o zachodzie słońca</strong> — to ten widok. Trzy medresy z XVI–XVII w. pokryte lazurowymi mozaikami, oświetlone zachodzącym słońcem. Zarezerwuj co najmniej dwa wieczory tylko na siedzenie i patrzenie. Wrzesień to idealna pora — temperatury ~26–30°C w dzień, przyjemne wieczory ~18°C.</div>
+    <div class="days">
+      <div class="dc">
+        <div class="dl"><div class="dn dn-rust">4</div><div class="dline dl-rust"></div></div>
+        <div class="dr">
+          <div class="dm">20 wrz · niedziela</div>
+          <div class="dt">Registan — pierwsze spotkanie · Gur-e-Amir</div>
+          <div class="dd">Przyjazd, zameldowanie. Po południu: Gur-e-Amir — mauzoleum Tamerlana z lazurową kopułą. Wieczór: pierwszy spacer na Registan o zachodzie słońca — trzy medresy Ulugbeka, Sher-Dor i Tilla-Kori. Kolacja przy placu Registanu.</div>
+          <span class="tag t-rust">Registan ✦</span><span class="tag t-rust">Gur-e-Amir</span>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="dl"><div class="dn dn-rust">5</div><div class="dline dl-rust"></div></div>
+        <div class="dr">
+          <div class="dm">21 wrz · poniedziałek</div>
+          <div class="dt">Shah-i-Zinda · Meczet Bibi-Chanum</div>
+          <div class="dd">Shah-i-Zinda — aleja mauzoleów z XIV–XV w., najpiękniejsze mozaiki w Uzbekistanie, zwana "ulicą grobowców". Meczet Bibi-Chanum — gigantyczny meczet z XV w. zbudowany przez Tamerlana dla żony. Popołudnie: bazar Siab — targ przy Shah-i-Zinda, herbatki, suszone owoce, lepyoszki.</div>
+          <span class="tag t-rust">Shah-i-Zinda</span><span class="tag t-rust">Bibi-Chanum</span><span class="tag t-rust">Bazar Siab</span>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="dl"><div class="dn dn-rust">6</div><div class="dline dl-rust"></div></div>
+        <div class="dr">
+          <div class="dm">22 wrz · wtorek</div>
+          <div class="dt">Obserwatorium Ulugbeka · Afrosiyob · dzielnica rzemieślnicza</div>
+          <div class="dd">Obserwatorium Ulugbeka (XV w.) — wnuk Tamerlana zmierzył rok z dokładnością do minuty. Muzeum Afrosiyob — freski z VII w. pokazujące starożytną Samarkandę. Popołudnie: warsztaty rzemieślnicze przy Registanie — papierni, jedwab, ceramika. Wieczór na Registanie po zmroku (pokaz świetlny opcjonalnie).</div>
+          <span class="tag t-rust">Ulugbek</span><span class="tag t-rust">Afrosiyob</span><span class="tag t-rust">Rzemiosło</span>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="dl"><div class="dn dn-rust">7</div><div class="dline dl-rust"></div></div>
+        <div class="dr">
+          <div class="dm">23 wrz · środa</div>
+          <div class="dt">Szachrisabz — miasto Tamerlana (wycieczka)</div>
+          <div class="dd">~1,5 godz. jazdy (taksówka lub marszrutka, ~20 USD/3 os.). Szachrisabz — rodzinne miasto Tamerlana, Pałac Ak-Saraj z ruinami gigantycznych łuków, Dorut-Tilovat. UNESCO. Powrót do Samarkandy wieczorem. Ostatnia kolacja w ulubionej restauracji przy Registanie.</div>
+          <span class="tag t-rust">Szachrisabz UNESCO</span><span class="tag t-rust">Pałac Ak-Saraj</span>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="dl"><div class="dn dn-rust">8</div></div>
+        <div class="dr">
+          <div class="dm">24 wrz · czwartek</div>
+          <div class="dt">Wolny dzień · Pociąg do Buchary wieczorem</div>
+          <div class="dd">Wolny ranek — powrót w ulubione miejsca, zakupy (jedwab, ceramika z Samarkandy, miniaturowe malunki). Po południu: pociąg Afrosiyob Samarkanda → Buchara, ~2,5 godz., ~120 zł/os. Zameldowanie w riyadzie w starym mieście wieczorem.</div>
+          <span class="tag t-rust">Zakupy</span><span class="tag t-rust">Afrosiyob → Buchara ✦</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFER 2 -->
+<div class="xfer">
+  <p class="xe">Transfer II · 24 września</p>
+  <h3>Pociąg Afrosiyob — Samarkanda → Buchara</h3>
+  <div class="route">
+    <div class="rp"><div class="pn">Samarkanda</div><div class="ps">Jedwabny Szlak</div></div>
+    <div><div class="al"></div><div class="alb">~2,5 godz. · Talgo 250</div></div>
+    <div class="rp"><div class="pn">Buchara</div><div class="ps">Stare miasto UNESCO</div></div>
+  </div>
+  <p class="xn">Bilet ~120 zł/os. · Stacja Buchara-1 · riad w starym mieście ~15 min taksówką</p>
+</div>
+
+<!-- BUCHARA -->
+<section>
+  <div class="container">
+    <div class="sh">
+      <div class="se e-teal"><span class="dot d-teal"></span>Część trzecia — Buchara</div>
+      <h2>Cztery noce<br><em style="font-style:italic;font-weight:400">święte miasto Jedwabnego Szlaku</em></h2>
+      <p>Baza: stare miasto Buchary (UNESCO) — riad lub boutique hotel w historycznych murach</p>
+    </div>
+    <div class="note n-teal">Buchara to inne doświadczenie niż Samarkanda — mniejsza, spokojniejsza, bardziej autentyczna. Stare miasto jest zamieszkane od 2500 lat bez przerwy. Setki meczetów, medres i chon-sarajów (karawanserajów). Wieczorami przy fontannie Labi-Hauz czas zwalnia całkowicie.</div>
+    <div class="days">
+      <div class="dc">
+        <div class="dl"><div class="dn dn-teal">9</div><div class="dline dl-teal"></div></div>
+        <div class="dr">
+          <div class="dm">25 wrz · piątek</div>
+          <div class="dt">Stare miasto · Labi-Hauz · Kalon</div>
+          <div class="dd">Zameldowanie w riyadzie w sercu starego miasta. Spacer po Labi-Hauz — sadzawka z XVI w. otoczona meczetami i chajchanami, serce Buchary. Minaret Kalon (XII w.) — 47 m, najważniejszy symbol miasta. Meczet Kalon i Medressa Miri-Arab. Kolacja przy sadzawce.</dd>
+          <span class="tag t-teal">Labi-Hauz</span><span class="tag t-teal">Minaret Kalon</span>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="dl"><div class="dn dn-teal">10</div><div class="dline dl-teal"></div></div>
+        <div class="dr">
+          <div class="dm">26 wrz · sobota</div>
+          <div class="dt">Cytadela Ark · Samanidzi · Bazary kopułowe</div>
+          <div class="dd">Cytadela Ark — twierdza zamieszkana przez emirów do 1920 r. Mauzoleum Samanidzów (IX–X w.) — jeden z najpiękniejszych zabytków islamskich w Azji Środkowej. Bazary kopułowe: Toki Sarrafon (jubilerzy), Toki Telpakfurushon (czapnicy) — żywe bazary w średniowiecznych budowlach.</dd>
+          <span class="tag t-teal">Cytadela Ark</span><span class="tag t-teal">Samanidzi</span><span class="tag t-teal">Bazary kopułowe</span>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="dl"><div class="dn dn-teal">11</div><div class="dline dl-teal"></div></div>
+        <div class="dr">
+          <div class="dm">27 wrz · niedziela</div>
+          <div class="dt">Chor-Minor · Bolo-Hauz · Warsztaty jedwabiu</div>
+          <div class="dd">Chor-Minor — "cztery minarety", unikalna medresa z 1807 r. Meczet Bolo-Hauz — letni meczet emirów z kolumnadą z drewna orzechowego. Popołudnie: warsztaty jedwabiu ikat — zobaczenie procesu farbowania i tkania tradycyjnych wzorów. Wieczór: ostatnia kolacja w Bucharze przy Labi-Hauz.</dd>
+          <span class="tag t-teal">Chor-Minor</span><span class="tag t-teal">Jedwab ikat</span>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="dl"><div class="dn dn-teal">12</div><div class="dline dl-teal"></div></div>
+        <div class="dr">
+          <div class="dm">28 wrz · poniedziałek</div>
+          <div class="dt">Sitorai Mohi-Hosa · Powrót do Taszkentu</div>
+          <div class="dd">Rano: Sitorai Mohi-Hosa — letni pałac ostatnich emirów z mieszaniną stylu rosyjskiego i orientalnego, piękne ogrody. Popołudnie: pociąg Buchara → Taszkent (~4,5 godz.) lub lot Buchara → Taszkent (~1 godz.). Nocleg w Taszkencie przed wylotem.</dd>
+          <span class="tag t-teal">Pałac Sitorai</span><span class="tag t-teal">Powrót do TAS</span>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="dl"><div class="dn dn-teal">13</div></div>
+        <div class="dr">
+          <div class="dm">29 wrz · wtorek</div>
+          <div class="dt">Powrót do Gdańska</div>
+          <div class="dd">Lotnisko Taszkent (TAS). Lot do Gdańska z przesiadką (Turkish Airlines przez Stambuł lub Emirates przez Dubaj). Powrót do Gdańska.</dd>
+          <span class="tag t-teal">Powrót ✈</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICAL -->
+<section class="prac">
+  <div class="container">
+    <div class="se e-coral" style="margin-bottom:.6rem"><span class="dot d-coral"></span><span style="color:#E8613A">Informacje praktyczne</span></div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--navy);margin-top:.4rem">Co warto wiedzieć</h2>
+    <div class="pg">
+      <div class="pc"><div class="pi">✈️</div><div class="pt">Loty</div><div class="pd">GDN → TAS: Turkish Airlines przez Stambuł (~10–12 godz. łącznie) lub Emirates/flydubai przez Dubaj. <strong>Cena: ~1 200–2 500 zł/os.</strong> w obie strony. Rezerwuj 3–4 mies. wcześniej. Wrzesień to szczyt sezonu.</div></div>
+      <div class="pc"><div class="pi">🛂</div><div class="pt">Wiza i dokumenty</div><div class="pd"><strong>Paszport wymagany</strong> (dowód nie wystarczy). Polacy — wjazd bezwizowy do 30 dni. Paszport ważny min. 6 mies. po powrocie. Rejestracja w hotelach obowiązkowa — hotel robi to automatycznie.</div></div>
+      <div class="pc"><div class="pi">🚆</div><div class="pt">Pociąg Afrosiyob</div><div class="pd">Talgo 250 — pociąg dużych prędkości, komfortowy, klimatyzowany. Rezerwacja przez <strong>e-ticket.railway.uz</strong> lub eyand.pl. Bilety kupuj 30–40 dni wcześniej — wyprzedają się szybko. Klasa Business ~90 zł/os. TAS–SKD.</div></div>
+      <div class="pc"><div class="pi">💰</div><div class="pt">Waluta i ceny</div><div class="pd">Sum uzbecki (UZS). Karta Visa/Mastercard działa w hotelach i większych restauracjach. Gotówkę (dolary lub euro) wymieniaj w kantorach lub bankach — kurs oficjalny, nie ma czarnego rynku od 2017 r. Uzbekistan jest <strong>bardzo tani</strong> — kolacja ~10–20 zł/os.</div></div>
+      <div class="pc"><div class="pi">🌡️</div><div class="pt">Pogoda wrzesień</div><div class="pd">Idealna pora roku. Taszkent: 25–30°C. Samarkanda: 26–30°C (pierwsza połowa), 22–26°C (koniec miesiąca). Buchara: podobnie. Sucho, słonecznie, wieczory ~16–18°C — przyjemne do spacerów. Zero deszczu.</div></div>
+      <div class="pc"><div class="pi">🏨</div><div class="pt">Noclegi</div><div class="pd">Taszkent: hotel 3–4* od ~150–250 zł/pokój. Samarkanda: hotel przy Registanie od ~180–300 zł/pokój. Buchara: <strong>riad/boutique hotel w starym mieście</strong> — obowiązkowo, od ~150–280 zł/pokój. Booking.com lub bezpośrednio.</div></div>
+      <div class="pc"><div class="pi">🍽️</div><div class="pt">Jedzenie</div><div class="pd">Uzbekistan ma jedną z najlepszych kuchni Azji Środkowej. Plov (pilaf z jagnięciną) — danie narodowe. Szaszłyk, manti (pierogi), lagman (makaron), samsa (paszteciki). Kolacja w dobrej restauracji ~15–25 zł/os. Bardzo tanie.</div></div>
+      <div class="pc"><div class="pi">📡</div><div class="pt">Internet i SIM</div><div class="pd">Kup lokalną kartę SIM na lotnisku (Ucell, Beeline) — od ~10 zł, internet 4G dobry w miastach. Yandex Go — taksówki w Taszkencie i Samarkandzie (jak Uber). W Bucharze taksówki z targu lub przez hotel.</div></div>
+    </div>
+    <div class="alert" style="margin-top:1.5rem">⚠️ <strong>Ubezpieczenie turystyczne obowiązkowe.</strong> Karta EKUZ nie działa w Uzbekistanie. Polisa z min. 50 000 € pokrycia leczenia. Cena dla 3 os. na 12 dni: ~120–200 zł. Polecane: AXA, Allianz.</div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="budget">
+  <div class="container">
+    <div class="se e-coral" style="margin-bottom:.6rem"><span class="dot d-coral"></span><span style="color:#E8613A">Budżet</span></div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--navy);margin-top:.4rem">Szacunkowy koszt — 3 osoby</h2>
+    <table class="bt">
+      <tr class="bsec"><td colspan="2">Loty</td></tr>
+      <tr><td>GDN → TAS → GDN (3 os., z przesiadką, obie strony)</td><td>~3 600–7 500 zł</td></tr>
+      <tr class="bsec"><td colspan="2">Transport kolejowy</td></tr>
+      <tr><td>Pociąg Afrosiyob TAS → Samarkanda (3 os., Business)</td><td>~270 zł</td></tr>
+      <tr><td>Pociąg Afrosiyob Samarkanda → Buchara (3 os.)</td><td>~360 zł</td></tr>
+      <tr><td>Pociąg / lot Buchara → Taszkent (3 os.)</td><td>~270–600 zł</td></tr>
+      <tr class="bsec"><td colspan="2">Noclegi</td></tr>
+      <tr><td>Taszkent — 2 noce × 2 pokoje × ~200 zł/pok.</td><td>~800 zł</td></tr>
+      <tr><td>Samarkanda — 5 nocy × 2 pokoje × ~230 zł/pok.</td><td>~2 300 zł</td></tr>
+      <tr><td>Buchara — 4 noce × 2 pokoje × ~200 zł/pok. (riad)</td><td>~1 600 zł</td></tr>
+      <tr><td>Taszkent (noc przed wylotem) — 1 noc × 2 pok.</td><td>~400 zł</td></tr>
+      <tr class="bsec"><td colspan="2">Atrakcje i inne</td></tr>
+      <tr><td>Bilety wstępu (Registan, Shah-i-Zinda, Ark, Szachrisabz…)</td><td>~400–600 zł</td></tr>
+      <tr><td>Wycieczka do Szachrisabu (taksówka 3 os.)</td><td>~80 zł</td></tr>
+      <tr><td>Ubezpieczenie turystyczne (3 os., 12 dni)</td><td>~120–200 zł</td></tr>
+      <tr class="btotal"><td>Razem (bez wyżywienia)</td><td>~10 200–14 710 zł</td></tr>
+      <tr class="bpp"><td>Na osobę</td><td>~3 400–4 900 zł</td></tr>
+    </table>
+    <div class="vs" style="margin-top:1.5rem">
+      💡 <strong>Wyżywienie w Uzbekistanie</strong> — najtańsze ze wszystkich opcji. Kolacja z napojami ~15–25 zł/os., obiad ~10–15 zł. Szacunek dla 3 os. przez 12 dni: <strong>~2 500–4 000 zł</strong>. Łącznie z wyżywieniem: <strong>~12 700–18 710 zł / 3 osoby</strong> (~4 230–6 240 zł/os.). Duża rozpiętość zależy głównie od ceny lotów — wrzesień to droższy termin na tej trasie.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Taszkent <span>·</span> Samarkanda <span>·</span> Buchara <span>·</span> Wrzesień 2026</p>
+  <p style="margin-top:.4rem;font-size:.68rem">Ceny orientacyjne — do weryfikacji przed rezerwacją</p>
+</footer>
+
+</body>
+</html>
