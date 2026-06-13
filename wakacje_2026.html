@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Korsyka & Sardynia — Wrzesień 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0D1B2A;
+    --navy-mid: #162335;
+    --sand: #E8DCC8;
+    --sand-light: #F7F4EF;
+    --blue: #2B7FD4;
+    --blue-light: #D6EAF8;
+    --teal: #1A8C6B;
+    --teal-light: #D4EFE6;
+    --coral: #E8613A;
+    --coral-light: #FAEADE;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--sand-light);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 25% 60%, rgba(43,127,212,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 35% at 75% 40%, rgba(26,140,107,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sand);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero h1 .amp {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--coral);
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    color: var(--sand);
+    opacity: 0.75;
+    margin-bottom: 3rem;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-meta-item {
+    text-align: center;
+  }
+
+  .hero-meta-item .val {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+  }
+
+  .hero-meta-item .lbl {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sand);
+    opacity: 0.6;
+    margin-top: 0.3rem;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgba(255,255,255,0.35);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 2.5rem;
+    background: rgba(255,255,255,0.25);
+    animation: pulse-line 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-line {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.7; }
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ── SUMMARY ── */
+  .summary {
+    background: white;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 3.5rem 0;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0;
+  }
+
+  .summary-item {
+    padding: 1.25rem 1.5rem;
+    border-right: 1px solid rgba(0,0,0,0.07);
+  }
+
+  .summary-item:last-child { border-right: none; }
+
+  .summary-item .s-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .summary-item .s-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+
+  .summary-item .s-sub {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.15rem;
+  }
+
+  /* ── SECTION HEADS ── */
+  .section-head {
+    padding: 4rem 0 2rem;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-blue { background: var(--blue); }
+  .dot-teal { background: var(--teal); }
+  .dot-coral { background: var(--coral); }
+
+  .eye-blue { color: var(--blue); }
+  .eye-teal { color: var(--teal); }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--navy);
+  }
+
+  .section-head p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+    font-style: italic;
+  }
+
+  /* ── DAYS ── */
+  .days {
+    padding-bottom: 3rem;
+  }
+
+  .day-card {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0 1.5rem;
+    margin-bottom: 1px;
+    position: relative;
+  }
+
+  .day-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.2rem;
+  }
+
+  .day-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .day-num-blue { background: var(--blue); }
+  .day-num-teal { background: var(--teal); }
+
+  .day-line {
+    width: 1px;
+    flex: 1;
+    min-height: 1.5rem;
+    margin-top: 6px;
+  }
+
+  .day-line-blue { background: rgba(43,127,212,0.2); }
+  .day-line-teal { background: rgba(26,140,107,0.2); }
+
+  .day-right {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .day-meta {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+
+  .day-desc {
+    font-size: 0.875rem;
+    color: #4b5563;
+    line-height: 1.65;
+  }
+
+  .day-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    margin-right: 4px;
+  }
+
+  .tag-blue { background: var(--blue-light); color: #1a5ca8; }
+  .tag-teal { background: var(--teal-light); color: #0f5e47; }
+
+  /* ── FERRY CROSSING ── */
+  .ferry-crossing {
+    background: var(--navy);
+    color: white;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+
+  .ferry-crossing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 100% at 50% 50%, rgba(43,127,212,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    overflow: hidden;
+    opacity: 0.15;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: -5px;
+    width: 200%;
+    height: 40px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40'%3E%3Cpath d='M0,20 C150,35 350,5 600,20 C850,35 1050,5 1200,20 L1200,40 L0,40 Z' fill='%23fff'/%3E%3C/svg%3E") repeat-x;
+    background-size: 600px 40px;
+    animation: wave-move 6s linear infinite;
+  }
+
+  .wave:nth-child(2) {
+    animation-delay: -3s;
+    opacity: 0.6;
+    animation-duration: 9s;
+  }
+
+  @keyframes wave-move {
+    from { transform: translateX(0); }
+    to { transform: translateX(-600px); }
+  }
+
+  .ferry-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 1rem;
+  }
+
+  .ferry-crossing h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .ferry-crossing p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .ferry-route {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .ferry-port {
+    text-align: center;
+  }
+
+  .ferry-port .port-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .ferry-port .port-sub {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .ferry-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    color: var(--coral);
+  }
+
+  .ferry-arrow .arrow-line {
+    width: 80px;
+    height: 1px;
+    background: var(--coral);
+    position: relative;
+  }
+
+  .ferry-arrow .arrow-line::after {
+    content: '›';
+    position: absolute;
+    right: -6px;
+    top: -10px;
+    font-size: 1.2rem;
+  }
+
+  .ferry-arrow .arrow-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    white-space: nowrap;
+  }
+
+  /* ── PRACTICALITIES ── */
+  .practicalities {
+    padding: 4rem 0;
+    background: white;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .prac-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .prac-card {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    padding: 1.4rem;
+  }
+
+  .prac-icon {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .prac-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .prac-text {
+    font-size: 0.82rem;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+
+  /* ── BUDGET ── */
+  .budget {
+    padding: 4rem 0;
+  }
+
+  .budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .budget-table tr {
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .budget-table td {
+    padding: 0.75rem 0.5rem;
+    color: #374151;
+  }
+
+  .budget-table td:last-child {
+    text-align: right;
+    font-weight: 500;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .budget-table .total-row td {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    border-top: 2px solid var(--navy);
+    border-bottom: none;
+    padding-top: 1rem;
+  }
+
+  .budget-table .per-person td {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-style: italic;
+    border-bottom: none;
+    padding-top: 0.3rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+  }
+
+  footer span { color: var(--coral); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .summary-grid { grid-template-columns: 1fr 1fr; }
+    .summary-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .summary-item:nth-child(odd) { border-right: 1px solid rgba(0,0,0,0.07); }
+    .day-card { grid-template-columns: 48px 1fr; gap: 0 0.75rem; }
+    .ferry-arrow .arrow-line { width: 40px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wave, .hero-scroll::after { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Plan wyjazdu grupowego</p>
+  <h1>Sardynia <span class="amp">&</span><br>Korsyka</h1>
+  <p class="hero-subtitle">Dwie wyspy, jedna droga, wrzesień 2026</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="val">10</span>
+      <span class="lbl">dni</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="val">3</span>
+      <span class="lbl">osoby</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="val">17–26</span>
+      <span class="lbl">września</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="val">2</span>
+      <span class="lbl">bazy noclegowe</span>
+    </div>
+  </div>
+  <div class="hero-scroll">scroll</div>
+</section>
+
+<!-- SUMMARY -->
+<section class="summary">
+  <div class="container">
+    <div class="summary-grid">
+      <div class="summary-item">
+        <div class="s-label">Wylot</div>
+        <div class="s-val">GDN → Olbia</div>
+        <div class="s-sub">17 wrz, z przesiadką</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Powrót</div>
+        <div class="s-val">Figari → GDN</div>
+        <div class="s-sub">26 wrz, z przesiadką</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Baza Sardynia</div>
+        <div class="s-val">San Teodoro</div>
+        <div class="s-sub">4 noce, apartament 2-syp.</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Baza Korsyka</div>
+        <div class="s-val">Porto-Vecchio</div>
+        <div class="s-sub">5 nocy, apartament 2-syp.</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Transfer</div>
+        <div class="s-val">Prom 50 min</div>
+        <div class="s-sub">Santa Teresa → Bonifacio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SARDINIA -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow eye-blue"><span class="dot dot-blue"></span>Część pierwsza — Sardynia</div>
+      <h2>Cztery dni<br><em style="font-style:italic; font-weight:400;">na włoskiej wyspie</em></h2>
+      <p>Baza: okolice San Teodoro / Olbii — północna Sardynia</p>
+    </div>
+    <div class="days">
+
+      <div class="day-card">
+        <div class="day-left">
+          <div class="day-num day-num-blue">1</div>
+          <div class="day-line day-line-blue"></div>
+        </div>
+        <div class="day-right">
+          <div class="day-meta">17 wrz · środa</div>
+          <div class="day-title">Przylot — zameldowanie</div>
+          <div class="day-desc">Loty z Gdańska przez Brukselę lub Amsterdam. Odbiór auta na lotnisku Olbia (OLB). Dojazd do bazy noclegowej, kolacja lokalna, aklimatyzacja.</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left">
+          <div class="day-num day-num-blue">2</div>
+          <div class="day-line day-line-blue"></div>
+        </div>
+        <div class="day-right">
+          <div class="day-meta">18 wrz · czwartek</div>
+          <div class="day-title">Archipelag La Maddalena</div>
+          <div class="day-desc">Krótki prom z Palau (15 min) na wyspy La Maddalena i Caprera. Plaże Cala Corsara i Cala Coticcio — turkusowa woda w kryształowej czystości. Powrót do bazy wieczorem.</div>
+          <span class="day-tag tag-blue">Prom Palau–Maddalena</span>
+          <span class="day-tag tag-blue">Pływanie</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left">
+          <div class="day-num day-num-blue">3</div>
+          <div class="day-line day-line-blue"></div>
+        </div>
+        <div class="day-right">
+          <div class="day-meta">19 wrz · piątek</div>
+          <div class="day-title">Costa Smeralda i Porto Cervo</div>
+          <div class="day-desc">Plaże Capriccioli, Grande Pevero i Liscia Ruja — szmaragdowe wody, białe skały. Wieczorny spacer po Porto Cervo, aperitivo nad zatoką.</div>
+          <span class="day-tag tag-blue">Plaże</span>
+          <span class="day-tag tag-blue">Porto Cervo</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left">
+          <div class="day-num day-num-blue">4</div>
+          <div class="day-line day-line-blue"></div>
+        </div>
+        <div class="day-right">
+          <div class="day-meta">20 wrz · sobota</div>
+          <div class="day-title">Nuraghe Su Nuraxi + Orgosolo</div>
+          <div class="day-desc">Wyjazd w głąb wyspy (~2 godz.). Prehistoryczne nuraghi Su Nuraxi (lista UNESCO) — 3500 lat historii na kamiennych wieżach. Murale polityczne w Orgosolo. Powrót do bazy przez wieczorne Sardynia.</div>
+          <span class="day-tag tag-blue">UNESCO</span>
+          <span class="day-tag tag-blue">Wnętrze wyspy</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FERRY CROSSING -->
+<div class="ferry-crossing">
+  <div class="waves">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+  <p class="ferry-eyebrow">Dzień 5 · 21 września · niedziela</p>
+  <h3>Przeprawa przez cieśninę</h3>
+  <p>13 kilometrów oddziela dwie wyspy — i dwa światy</p>
+  <div class="ferry-route">
+    <div class="ferry-port">
+      <div class="port-name">Santa Teresa Gallura</div>
+      <div class="port-sub">Sardynia · Italia</div>
+    </div>
+    <div class="ferry-arrow">
+      <div class="arrow-line"></div>
+      <div class="arrow-label">~50 minut · Moby Lines</div>
+    </div>
+    <div class="ferry-port">
+      <div class="port-name">Bonifacio</div>
+      <div class="port-sub">Korsyka · France</div>
+    </div>
+  </div>
+</div>
+
+<!-- CORSICA -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow eye-teal"><span class="dot dot-teal"></span>Część druga — Korsyka</div>
+      <h2>Pięć dni<br><em style="font-style:italic; font-weight:400;">na wyspie piękności</em></h2>
+      <p>Baza: Porto-Vecchio — południowa Korsyka</p>
+    </div>
+    <div class="days">
+
+      <div class="day-card">
+        <div class="day-left">
+          <div class="day-num day-num-teal">5</div>
+          <div class="day-line day-line-teal"></div>
+        </div>
+        <div class="day-right">
+          <div class="day-meta">21 wrz · niedziela</div>
+          <div class="day-title">Przyjazd — cytadela Bonifacio</div>
+          <div class="day-desc">Oddanie auta w Santa Teresa, prom, odbiór nowego auta w Bonifacio. Zameldowanie w Porto-Vecchio. Po południu spacer po białych klifach i cytadeli Bonifacio — jedno z najbardziej dramatycznych miast Morza Śródziemnego.</div>
+          <span class="day-tag tag-teal">Bonifacio</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left">
+          <div class="day-num day-num-teal">6</div>
+          <div class="day-line day-line-teal"></div>
+        </div>
+        <div class="day-right">
+          <div class="day-meta">22 wrz · poniedziałek</div>
+          <div class="day-title">Plaże południa</div>
+          <div class="day-desc">Plage de Santa Giulia i Plage de Palombaggia — regularnie wymieniane wśród najpiękniejszych plaż Europy. Zaledwie 15–20 minut od bazy. Spokojny dzień przy morzu.</div>
+          <span class="day-tag tag-teal">Plaże</span>
+          <span class="day-tag tag-teal">15 min od bazy</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left">
+          <div class="day-num day-num-teal">7</div>
+          <div class="day-line day-line-teal"></div>
+        </div>
+        <div class="day-right">
+          <div class="day-meta">23 wrz · wtorek</div>
+          <div class="day-title">Górskie serce Korsyki — Córte</div>
+          <div class="day-desc">~1,5 godz. jazdy przez korsykańskie góry. Cytadela Córte, kanion Gorges de la Restonica z lodowatymi basenami górskimi. Degustacja lokalnych serów i charcuterie. Powrót przez malowniczą przełęcz.</div>
+          <span class="day-tag tag-teal">Góry</span>
+          <span class="day-tag tag-teal">Córte</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left">
+          <div class="day-num day-num-teal">8</div>
+          <div class="day-line day-line-teal"></div>
+        </div>
+        <div class="day-right">
+          <div class="day-meta">24 wrz · środa</div>
+          <div class="day-title">Sartène — zachodnie wybrzeże</div>
+          <div class="day-desc">Sartène, najpiękniejsze korsykańskie miasto według Mériméego. Dalej plaże Propriano i widoki na zachodnie wybrzeże. Opcjonalnie: Calanques de Piana na dłuższy wyjazd.</div>
+          <span class="day-tag tag-teal">Sartène</span>
+          <span class="day-tag tag-teal">Zachód</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left">
+          <div class="day-num day-num-teal">9</div>
+          <div class="day-line day-line-teal"></div>
+        </div>
+        <div class="day-right">
+          <div class="day-meta">25 wrz · czwartek</div>
+          <div class="day-title">Ajaccio — ostatni wieczór</div>
+          <div class="day-desc">~1,5 godz. jazdy. Dom urodzenia Napoleona, Musée Fesch z flamandzkim malarstwem, plaże w pobliżu miasta. Ostatnia kolacja w Porto-Vecchio — pożegnanie z wyspą.</div>
+          <span class="day-tag tag-teal">Ajaccio</span>
+          <span class="day-tag tag-teal">Napoleon</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left">
+          <div class="day-num day-num-teal">10</div>
+        </div>
+        <div class="day-right">
+          <div class="day-meta">26 wrz · piątek</div>
+          <div class="day-title">Powrót do Gdańska</div>
+          <div class="day-desc">Rano wymeldowanie. Oddanie auta na lotnisku Figari (FSC, 25 min od Porto-Vecchio) lub Ajaccio. Lot do Gdańska z przesiadką. Powrót wieczorem.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICALITIES -->
+<section class="practicalities">
+  <div class="container">
+    <div class="section-eyebrow"><span class="dot dot-coral"></span><span style="color:var(--coral);">Informacje praktyczne</span></div>
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,4vw,2.2rem); color:var(--navy); margin-top:0.5rem;">Co warto wiedzieć</h2>
+    <div class="prac-grid">
+      <div class="prac-card">
+        <div class="prac-icon">✈️</div>
+        <div class="prac-title">Loty</div>
+        <div class="prac-text">Brak bezpośrednich z Gdańska. Najtaniej przez Brukselę Charleroi (Ryanair) lub Amsterdam (Transavia/KLM). Wlecieć na Sardynię, wylecieć z Korsyki. Od ~300–500 zł/os. w każdą stronę.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🏠</div>
+        <div class="prac-title">Noclegi</div>
+        <div class="prac-text">Apartament z 2 sypialniami na Airbnb, Booking.com lub HomeToGo. Sardynia: od ~100–160 €/noc. Korsyka: od ~110–180 €/noc. Wrzesień — znacznie taniej niż sierpień.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🚗</div>
+        <div class="prac-title">Wynajem aut</div>
+        <div class="prac-text">Dwa osobne wynajmy — każde auto na ~5 dni. Sardynia od ~35 €/dobę. Rezerwuj przez Rentalcars lub DiscoverCars z wyprzedzeniem. Aut NIE wozi się promem — dwie osobne umowy.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">⛵</div>
+        <div class="prac-title">Prom</div>
+        <div class="prac-text">Santa Teresa Gallura → Bonifacio. Czas: ~50 min. Operatorzy: Moby Lines, Ichnusa Lines. 5–7 rejsów dziennie. Cena pieszych: od ~30–40 €/os. Rezerwuj online z wyprzedzeniem.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🌡️</div>
+        <div class="prac-title">Wrzesień na wyspach</div>
+        <div class="prac-text">Woda morska ~24–26°C, temperatura powietrza ~25°C. Tłumy i ceny wyraźnie niższe niż w sierpniu. Idealny miesiąc — ciepło, spokojnie, dostępnie.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">📋</div>
+        <div class="prac-title">Do zabrania</div>
+        <div class="prac-text">Dowód osobisty (Korsyka to Francja, Sardynia to Włochy — UE). Karta EKUZ. Prawo jazdy. Buty do chodzenia po skałach. Krem SPF 50+.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="budget">
+  <div class="container">
+    <div class="section-eyebrow"><span class="dot dot-coral"></span><span style="color:var(--coral);">Budżet</span></div>
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,4vw,2.2rem); color:var(--navy); margin-top:0.5rem;">Szacunkowy koszt — 3 osoby</h2>
+    <table class="budget-table">
+      <tr>
+        <td>Loty (3 os. × ~900 zł)</td>
+        <td>~2 700 zł</td>
+      </tr>
+      <tr>
+        <td>Auto #1 — Sardynia (5 dni)</td>
+        <td>~650–950 zł</td>
+      </tr>
+      <tr>
+        <td>Auto #2 — Korsyka (5 dni)</td>
+        <td>~650–950 zł</td>
+      </tr>
+      <tr>
+        <td>Prom (3 os., pieszy)</td>
+        <td>~130–180 zł</td>
+      </tr>
+      <tr>
+        <td>Noclegi Sardynia — 4 noce × ~130 €</td>
+        <td>~2 200 zł</td>
+      </tr>
+      <tr>
+        <td>Noclegi Korsyka — 5 nocy × ~140 €</td>
+        <td>~3 000 zł</td>
+      </tr>
+      <tr class="total-row">
+        <td>Razem (bez wyżywienia i atrakcji)</td>
+        <td>~9 300–10 000 zł</td>
+      </tr>
+      <tr class="per-person">
+        <td>Na osobę</td>
+        <td>~3 100–3 300 zł</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Sardynia <span>&</span> Korsyka · Wrzesień 2026 · Plan wyjazdu</p>
+  <p style="margin-top:0.5rem; font-size:0.7rem;">Ceny orientacyjne — do weryfikacji przed rezerwacją</p>
+</footer>
+
+</body>
+</html>
