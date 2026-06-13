@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turcja — Stambuł & Kapadocja · Wrzesień 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#C0392B;--red-light:#FCEAE8;
+  --amber:#C4862A;--amber-light:#FDF0D9;
+  --navy:#0D1B2A;--sand:#F7F4EF;--muted:#6b7280;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--sand);color:var(--navy);line-height:1.6}
+
+.hero{background:var(--navy);color:white;min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 20% 55%,rgba(192,57,43,.22) 0%,transparent 70%),radial-gradient(ellipse 45% 35% at 80% 40%,rgba(196,134,42,.2) 0%,transparent 70%);pointer-events:none}
+.hero-eye{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1.25rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,7vw,5.5rem);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin-bottom:.5rem}
+.hero h1 em{font-style:italic;font-weight:400;color:#F5C842}
+.hero-sub{font-family:'Playfair Display',serif;font-size:clamp(.95rem,2vw,1.2rem);font-style:italic;color:rgba(255,255,255,.6);margin-bottom:2.5rem}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem}
+.hm .v{display:block;font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:600;line-height:1}
+.hm .l{display:block;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:.25rem}
+.hero-chapters{display:flex;border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
+.hc{padding:.65rem 1.4rem;font-size:.7rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+.hc-red{background:rgba(192,57,43,.25);color:#F5A89A}
+.hc-amber{background:rgba(196,134,42,.25);color:#F5D68A}
+.hero-scroll{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.25);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.3rem}
+.hero-scroll::after{content:'';width:1px;height:2rem;background:rgba(255,255,255,.2);animation:pl 2s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:.2}50%{opacity:.6}}
+
+.container{max-width:860px;margin:0 auto;padding:0 1.5rem}
+
+.summary{background:white;border-bottom:1px solid rgba(0,0,0,.06);padding:2.5rem 0}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+.si{padding:.9rem 1.1rem;border-right:1px solid rgba(0,0,0,.07)}
+.si:last-child{border-right:none}
+.sl{font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.sv{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:600;color:var(--navy);line-height:1.3}
+.ss{font-size:.7rem;color:var(--muted);margin-top:.1rem}
+
+.sh{padding:3.5rem 0 1.75rem}
+.se{display:flex;align-items:center;gap:.55rem;font-size:.65rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.5rem}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.d-red{background:var(--red)} .d-amber{background:var(--amber)} .d-coral{background:#E8613A}
+.e-red{color:var(--red)} .e-amber{color:var(--amber)} .e-coral{color:#E8613A}
+.sh h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.7rem);font-weight:700;line-height:1.1;color:var(--navy)}
+.sh p{font-size:.88rem;color:var(--muted);margin-top:.4rem;font-style:italic}
+
+.note{border-radius:9px;padding:.9rem 1.1rem;margin-bottom:1.25rem;font-size:.82rem;line-height:1.65}
+.n-amber{background:var(--amber-light);border:1px solid rgba(196,134,42,.2);color:#5a3a08}
+.n-red{background:var(--red-light);border:1px solid rgba(192,57,43,.2);color:#6b1a14}
+
+.days{padding-bottom:2.5rem}
+.dc{display:grid;grid-template-columns:68px 1fr;gap:0 1.1rem}
+.dl{display:flex;flex-direction:column;align-items:center;padding-top:1rem}
+.dn{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:white;flex-shrink:0}
+.dn-red{background:var(--red)} .dn-amber{background:var(--amber)}
+.dline{width:1px;flex:1;min-height:1rem;margin-top:5px}
+.dl-red{background:rgba(192,57,43,.2)} .dl-amber{background:rgba(196,134,42,.2)}
+.dr{background:white;border:1px solid rgba(0,0,0,.06);border-radius:10px;padding:1.05rem 1.25rem;margin-bottom:.55rem}
+.dm{font-size:.63rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.dt{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:.3rem;line-height:1.3}
+.dd{font-size:.845rem;color:#4b5563;line-height:1.65}
+.tag{display:inline-block;font-size:.6rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-top:.45rem;margin-right:3px}
+.t-red{background:var(--red-light);color:#7a0f0a}
+.t-amber{background:var(--amber-light);color:#7a4d0b}
+
+.xfer{background:var(--navy);padding:2.25rem 1.5rem;text-align:center;color:white;margin:.5rem 0;position:relative;overflow:hidden}
+.xfer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 100% at 50% 50%,rgba(192,57,43,.18) 0%,transparent 70%);pointer-events:none}
+.xe{font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.55rem}
+.xfer h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:1rem}
+.route{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
+.rp .pn{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:600}
+.rp .ps{font-size:.62rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.07em}
+.al{width:55px;height:1px;background:var(--red);position:relative;margin:0 auto}
+.al::after{content:'›';position:absolute;right:-4px;top:-9px;font-size:1rem;color:var(--red)}
+.alb{font-size:.6rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.2rem;white-space:nowrap}
+.xn{font-size:.74rem;color:rgba(255,255,255,.35);margin-top:.85rem}
+
+.prac{padding:4rem 0;background:white;border-top:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06)}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem;margin-top:1.75rem}
+.pc{border:1px solid rgba(0,0,0,.08);border-radius:10px;padding:1.2rem}
+.pi{font-size:1.2rem;margin-bottom:.55rem}
+.pt{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:.3rem}
+.pd{font-size:.8rem;color:#4b5563;line-height:1.6}
+
+.budget{padding:4rem 0}
+.bt{width:100%;border-collapse:collapse;margin-top:1.75rem;font-size:.87rem}
+.bt tr{border-bottom:1px solid rgba(0,0,0,.06)}
+.bt td{padding:.65rem .5rem;color:#374151}
+.bt td:last-child{text-align:right;font-weight:500;color:var(--navy);white-space:nowrap}
+.bsec td{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:1rem;padding-bottom:.2rem;border-bottom:none}
+.btotal td{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);border-top:2px solid var(--navy);border-bottom:none;padding-top:.8rem}
+.bpp td{font-size:.77rem;color:var(--muted);font-style:italic;border-bottom:none;padding-top:.2rem}
+
+.alert{background:var(--red-light);border:1px solid rgba(192,57,43,.2);border-radius:10px;padding:1.1rem 1.3rem;font-size:.83rem;color:#5a1208;line-height:1.65}
+.vs{background:var(--amber-light);border:1px solid rgba(196,134,42,.2);border-radius:10px;padding:1.1rem 1.3rem;font-size:.83rem;color:#5a3a08;line-height:1.65}
+
+.divider{border:none;border-top:1px solid rgba(0,0,0,.07);margin:2rem 0}
+
+footer{background:var(--navy);color:rgba(255,255,255,.35);text-align:center;padding:2rem;font-size:.75rem;letter-spacing:.04em}
+footer span{color:#E8613A}
+
+@media(max-width:600px){
+  .sg{grid-template-columns:1fr 1fr}
+  .si{border-right:none;border-bottom:1px solid rgba(0,0,0,.07)}
+  .si:nth-child(odd){border-right:1px solid rgba(0,0,0,.07)}
+  .dc{grid-template-columns:42px 1fr;gap:0 .6rem}
+  .hero-chapters{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){.hero-scroll::after{animation:none}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <p class="hero-eye">Plan wyjazdu · Wrzesień 2026 · Wariant Turcja</p>
+  <h1>Stambuł<br><em>&amp; Kapadocja</em></h1>
+  <p class="hero-sub">Miasto na dwóch kontynentach i księżycowe doliny — 11 nocy</p>
+  <div class="hero-meta">
+    <div class="hm"><span class="v">11</span><span class="l">nocy</span></div>
+    <div class="hm"><span class="v">3</span><span class="l">osoby</span></div>
+    <div class="hm"><span class="v">17–28</span><span class="l">września</span></div>
+    <div class="hm"><span class="v">2</span><span class="l">bazy</span></div>
+  </div>
+  <div class="hero-chapters">
+    <div class="hc hc-red">I · Stambuł · 4 noce</div>
+    <div class="hc hc-amber">II · Kapadocja · 6 nocy</div>
+  </div>
+  <div class="hero-scroll">scroll</div>
+</section>
+
+<section class="summary">
+  <div class="container">
+    <div class="sg">
+      <div class="si"><div class="sl">Wylot</div><div class="sv">GDN → IST</div><div class="ss">17 wrz (czw), z przesiadką</div></div>
+      <div class="si"><div class="sl">Baza I</div><div class="sv">Stambuł</div><div class="ss">4 noce · Sultanahmet</div></div>
+      <div class="si"><div class="sl">Lot wewnętrzny</div><div class="sv">IST → Kayseri</div><div class="ss">21 wrz · Turkish / Pegasus</div></div>
+      <div class="si"><div class="sl">Baza II</div><div class="sv">Göreme</div><div class="ss">6 nocy · cave hotel</div></div>
+      <div class="si"><div class="sl">Powrót</div><div class="sv">ASR → IST → GDN</div><div class="ss">28 wrz (nd), z przesiadką</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STAMBUŁ -->
+<section>
+  <div class="container">
+    <div class="sh">
+      <div class="se e-red"><span class="dot d-red"></span>Część pierwsza — Stambuł</div>
+      <h2>Cztery noce<br><em style="font-style:italic;font-weight:400">miasto na dwóch kontynentach</em></h2>
+      <p>Baza: Sultanahmet — Hagia Sophia, Topkapi i Bazar Kryty w promieniu 10 minut spaceru</p>
+    </div>
+    <div class="note n-red"><strong>Sultanahmet vs Beyoğlu?</strong> Sultanahmet to epicentrum zabytków — idealne przy tym wyjeździe. Beyoğlu (Karaköy, Taksim) to bardziej lokalna i nocna dzielnica — warto odwiedzić wieczorami, ale baza tam mniej wygodna dla zwiedzania.</div>
+    <div class="days">
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-red">1</div><div class="dline dl-red"></div></div>
+        <div class="dr">
+          <div class="dm">17 wrz · czwartek</div>
+          <div class="dt">Przylot — Bosfor wieczorem</div>
+          <div class="dd">Lot z Gdańska do Stambułu z przesiadką (Wizz Air, Pegasus lub LOT przez Warszawę). Zameldowanie w Sultanahmet. Wieczorny spacer nad Bosfor — Most Galata, pierwsze kebaby i herbata na tarasie z widokiem na oświetloną Hagia Sophię.</div>
+          <span class="tag t-red">Przylot</span><span class="tag t-red">Bosfor wieczorem</span>
+        </div>
+      </div>
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-red">2</div><div class="dline dl-red"></div></div>
+        <div class="dr">
+          <div class="dm">18 wrz · piątek</div>
+          <div class="dt">Hagia Sophia · Pałac Topkapi · Bazar Kryty</div>
+          <div class="dd">Rano Hagia Sophia (rezerwuj bilety online!). Pałac Topkapi — skarbiec i harem. Po południu Bazar Kryty (Kapalıçarşı): 4 000 sklepów, przyprawy, lampy, tkaniny. Kolacja w dzielnicy Eminönü nad wodą.</div>
+          <span class="tag t-red">Hagia Sophia</span><span class="tag t-red">Topkapi</span><span class="tag t-red">Bazar Kryty</span>
+        </div>
+      </div>
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-red">3</div><div class="dline dl-red"></div></div>
+        <div class="dr">
+          <div class="dm">19 wrz · sobota</div>
+          <div class="dt">Błękitny Meczet · Rejs po Bosforze · Beyoğlu</div>
+          <div class="dd">Rano Błękitny Meczet (wstęp wolny, zakryj ramiona). Rejs po Bosforze (~25 €/os.) — skyline między Europą a Azją z wody. Wieczór w Beyoğlu — ulica İstiklal, Karaköy, nowoczesne restauracje tureckie.</div>
+          <span class="tag t-red">Błękitny Meczet</span><span class="tag t-red">Rejs Bosfor</span><span class="tag t-red">Beyoğlu</span>
+        </div>
+      </div>
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-red">4</div><div class="dline dl-red"></div></div>
+        <div class="dr">
+          <div class="dm">20 wrz · niedziela</div>
+          <div class="dt">Azjatycka strona · Kadıköy i Üsküdar</div>
+          <div class="dd">Przeprawa promem na azjatycką stronę Stambułu (5 min, ~1 €). Üsküdar — spokojniejszy, bardziej lokalny Stambuł z widokiem na europejski brzeg. Kadıköy — tętniąca dzielnica z targiem ulicznym i jadłodajniami. Powrót promem o zachodzie słońca.</div>
+          <span class="tag t-red">Azja ↔ Europa</span><span class="tag t-red">Kadıköy</span><span class="tag t-red">Prom</span>
+        </div>
+      </div>
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-red">5</div></div>
+        <div class="dr">
+          <div class="dm">21 wrz · poniedziałek</div>
+          <div class="dt">Bazar Egipski · Lot do Kapadocji</div>
+          <div class="dd">Rano Bazar Egipski (Mısır Çarşısı) — przyprawy, suszone owoce, turecka delicja lokalna. Lot wewnętrzny IST → Kayseri (ASR) — Turkish Airlines lub Pegasus, ~1 godz., od ~200–400 zł / 3 os. Transfer do Göreme (~1 godz.). Zameldowanie w cave hotelu.</div>
+          <span class="tag t-red">Bazar Egipski</span><span class="tag t-red">Lot wewnętrzny ✈</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFER -->
+<div class="xfer">
+  <p class="xe">Transfer · 21 września · poniedziałek</p>
+  <h3>Stambuł → Kapadocja</h3>
+  <div class="route">
+    <div class="rp"><div class="pn">Stambuł (IST)</div><div class="ps">Europa / Azja · Turcja</div></div>
+    <div>
+      <div class="al"></div>
+      <div class="alb">~1 godz. · Turkish / Pegasus</div>
+    </div>
+    <div class="rp"><div class="pn">Kayseri (ASR)</div><div class="ps">Brama do Kapadocji</div></div>
+  </div>
+  <p class="xn">od ~200–400 zł / 3 os. · rezerwuj razem z biletem głównym do Stambułu</p>
+</div>
+
+<!-- KAPADOCJA -->
+<section>
+  <div class="container">
+    <div class="sh">
+      <div class="se e-amber"><span class="dot d-amber"></span>Część druga — Kapadocja</div>
+      <h2>Sześć nocy<br><em style="font-style:italic;font-weight:400">księżycowe doliny i doliny o wschodzie słońca</em></h2>
+      <p>Baza: Göreme — centrum Kapadocji, hotele jaskiniowe (cave hotels)</p>
+    </div>
+    <div class="note n-amber">🌅 <strong>Wschód słońca bez balonem</strong> — wyjdź na punkt widokowy Rose Hill lub Sunset Point ~5:00. Widok dziesiątek kolorowych balonów innych turystów unoszących się nad dolinami jest spektakularny i bezpłatny. Dolina Różowa o świcie to jedno z najpiękniejszych miejsc w Turcji.</div>
+    <div class="days">
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-amber">6</div><div class="dline dl-amber"></div></div>
+        <div class="dr">
+          <div class="dm">22 wrz · wtorek — świt</div>
+          <div class="dt">Wschód słońca nad dolinami · Muzeum Göreme</div>
+          <div class="dd">Pobudka ~5:00. Punkt widokowy Rose Hill — obserwacja balonów nad kominami wróżek przy wschodzie słońca. Po śniadaniu: Muzeum na Wolnym Powietrzu w Göreme (kościoły wykute w skale, freski z X–XI w., UNESCO). Popołudniu trekking Doliną Różową lub Czerwoną.</div>
+          <span class="tag t-amber">Wschód słońca</span><span class="tag t-amber">Göreme UNESCO</span><span class="tag t-amber">Trekking</span>
+        </div>
+      </div>
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-amber">7</div><div class="dline dl-amber"></div></div>
+        <div class="dr">
+          <div class="dm">23 wrz · środa</div>
+          <div class="dt">Podziemne miasto Derinkuyu · Dolina Ihlara</div>
+          <div class="dd">Derinkuyu — podziemne miasto 18 pięter pod ziemią, mogło pomieścić 20 000 osób. Dolina Ihlara — trekking wzdłuż rzeki wśród kościołów skalnych (~3–4 godz.). Kolacja w jaskiniowej restauracji z lokalnym winem kappadockim.</div>
+          <span class="tag t-amber">Derinkuyu</span><span class="tag t-amber">Trekking Ihlara</span>
+        </div>
+      </div>
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-amber">8</div><div class="dline dl-amber"></div></div>
+        <div class="dr">
+          <div class="dm">24 wrz · czwartek</div>
+          <div class="dt">Uçhisar · Ürgüp · Dolina Miłości</div>
+          <div class="dd">Zamek Uçhisar — najwyższy punkt Kapadocji z panoramą całego regionu. Ürgüp — degustacja lokalnego wina w piwnicy skalnej. Spacer po Dolinie Miłości (Love Valley) i Dolinie Wyobraźni — najbardziej surrealistyczne formacje skalne. Zachód słońca z Sunset Point.</div>
+          <span class="tag t-amber">Uçhisar</span><span class="tag t-amber">Degustacja wina</span><span class="tag t-amber">Dolina Miłości</span>
+        </div>
+      </div>
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-amber">9</div><div class="dline dl-amber"></div></div>
+        <div class="dr">
+          <div class="dm">25 wrz · piątek</div>
+          <div class="dt">Avanos · Dolina Zelve · Zachód słońca</div>
+          <div class="dd">Avanos nad rzeką Kızılırmak — miasto garncarzy, warsztaty ceramiczne (ulepienie naczynia z gliny). Dolina Zelve — opuszczone skalne miasto zamieszkane do 1952 r., labirynty wykutych domów. Wieczorny zachód słońca z Sunset Point nad Göreme.</div>
+          <span class="tag t-amber">Avanos garncarze</span><span class="tag t-amber">Dolina Zelve</span>
+        </div>
+      </div>
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-amber">10</div><div class="dline dl-amber"></div></div>
+        <div class="dr">
+          <div class="dm">26 wrz · sobota</div>
+          <div class="dt">Dolina Soğanlı · Mustafapaşa · hamam</div>
+          <div class="dd">Dolina Soğanlı — spokojniejsza, mniej turystyczna, z kościołami z freskami z VII–XI w. Mustafapaşa (dawna Sinasos) — greckie domy z XIX w. w doskonałym stanie. Popołudnie wolne — odpoczynek lub hamam w Göreme. Kolacja pożegnalna z widokiem na dolinę.</div>
+          <span class="tag t-amber">Soğanlı</span><span class="tag t-amber">Mustafapaşa</span><span class="tag t-amber">Hamam</span>
+        </div>
+      </div>
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-amber">11</div><div class="dline dl-amber"></div></div>
+        <div class="dr">
+          <div class="dm">27 wrz · niedziela</div>
+          <div class="dt">Ostatni wschód słońca · Jaskiniowe miasto Kaymaklı</div>
+          <div class="dd">Poranek: ostatni raz punkt widokowy o świcie. Kaymaklı — drugie wielkie podziemne miasto, inne niż Derinkuyu, z innym układem korytarzy. Zakupy lokalne — dywany kilim, ceramika, przyprawy. Pakowanie, ostatnia kolacja w Göreme.</div>
+          <span class="tag t-amber">Kaymaklı</span><span class="tag t-amber">Zakupy lokalne</span>
+        </div>
+      </div>
+
+      <div class="dc">
+        <div class="dl"><div class="dn dn-amber">12</div></div>
+        <div class="dr">
+          <div class="dm">28 wrz · poniedziałek</div>
+          <div class="dt">Powrót do Gdańska</div>
+          <div class="dd">Transfer na lotnisko Kayseri (ASR, ~1 godz.). Lot ASR → IST → GDN z przesiadką w Stambule (Turkish Airlines lub Pegasus). Powrót do Gdańska wieczorem.</div>
+          <span class="tag t-amber">Powrót ✈</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICAL -->
+<section class="prac">
+  <div class="container">
+    <div class="se e-coral" style="margin-bottom:.6rem"><span class="dot d-coral"></span><span style="color:#E8613A">Informacje praktyczne</span></div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--navy);margin-top:.4rem">Co warto wiedzieć</h2>
+    <div class="pg">
+      <div class="pc"><div class="pi">✈️</div><div class="pt">Loty</div><div class="pd">GDN → IST: Wizz Air lub Pegasus z przesiadką, od ~400–700 zł/os. Sprawdź też opcję z Katowic lub Warszawy (LOT bezpośredni do IST). Powrót: ASR → IST → GDN przez Kayseri.</div></div>
+      <div class="pc"><div class="pi">🛂</div><div class="pt">Dokumenty — WAŻNE</div><div class="pd"><strong>Paszport wymagany</strong> — dowód osobisty nie wystarczy. Ważny min. 6 mies. po powrocie. Wizy nie potrzeba (pobyt do 90 dni). Karta EKUZ nie działa w Turcji — wykup ubezpieczenie turystyczne.</div></div>
+      <div class="pc"><div class="pi">💰</div><div class="pt">Waluta</div><div class="pd">Lira turecka (TRY). Płatność kartą powszechna w hotelach i restauracjach. Gotówkę wymieniaj w kantorach na miejscu (döviz bürosu) — znacznie lepsze kursy niż w Polsce lub na lotnisku.</div></div>
+      <div class="pc"><div class="pi">🌅</div><div class="pt">Wschód słońca w Kapadocji</div><div class="pd">Wyjdź na Rose Hill lub Sunset Point ~5:00. Widok dziesiątek balonów nad dolinami jest spektakularny i bezpłatny. Kapadocja ma ~260 dni w roku nadających się do lotów — wrzesień jest jednym z najlepszych miesięcy.</div></div>
+      <div class="pc"><div class="pi">🌡️</div><div class="pt">Pogoda wrzesień</div><div class="pd">Stambuł: 22–27°C, słonecznie. Kapadocja: 20–26°C w dzień, <strong>8–12°C o poranku</strong> — weź polar lub kurtkę! Wrzesień to jeden z najlepszych miesięcy w obu miejscach.</div></div>
+      <div class="pc"><div class="pi">🚗</div><div class="pt">Transport lokalny</div><div class="pd">Stambuł: tramwaj T1 (Sultanahmet–Kabataş), Istanbulkart (~3 €). Kapadocja: wycieczki z Göreme lub wynajem auta od ~25 €/dobę — polecany dla elastyczności.</div></div>
+      <div class="pc"><div class="pi">🏨</div><div class="pt">Cave hotel w Göreme</div><div class="pd">Hotele jaskiniowe to unikalne doświadczenie Kapadocji — pokoje wykute w skale, naturalna klimatyzacja. Standard 3–4* od ~200–350 zł/pokój. Rezerwuj z 2–3 mies. wyprzedzenia.</div></div>
+      <div class="pc"><div class="pi">🕌</div><div class="pt">Kultura i etykieta</div><div class="pd">W meczetach zakryj ramiona i głowę (szal dla kobiet), zdejmij buty. Na bazarach targuj się — to norma. Napiwki ~10% w restauracjach. Herbata (çay) oferowana wszędzie — nie odmawiaj, to gościnność.</div></div>
+    </div>
+    <div class="alert" style="margin-top:1.5rem">⚠️ <strong>Ubezpieczenie turystyczne obowiązkowe.</strong> Karta EKUZ nie działa w Turcji. Wykup polisę z pokryciem kosztów leczenia min. 100 000 €. Cena dla 3 os. na 11 dni: ~150–250 zł.</div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="budget">
+  <div class="container">
+    <div class="se e-coral" style="margin-bottom:.6rem"><span class="dot d-coral"></span><span style="color:#E8613A">Budżet</span></div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--navy);margin-top:.4rem">Szacunkowy koszt — 3 osoby</h2>
+    <table class="bt">
+      <tr class="bsec"><td colspan="2">Loty</td></tr>
+      <tr><td>GDN → IST (3 os., z przesiadką)</td><td>~1 200–2 100 zł</td></tr>
+      <tr><td>IST → Kayseri ASR (lot wewnętrzny, 3 os.)</td><td>~200–400 zł</td></tr>
+      <tr><td>ASR → IST → GDN (powrót, 3 os.)</td><td>~800–1 500 zł</td></tr>
+      <tr class="bsec"><td colspan="2">Noclegi</td></tr>
+      <tr><td>Stambuł — 4 noce × 2 pokoje × ~190 zł/pok.</td><td>~1 520 zł</td></tr>
+      <tr><td>Kapadocja — 6 nocy × 2 pokoje × ~250 zł (cave hotel)</td><td>~3 000 zł</td></tr>
+      <tr class="bsec"><td colspan="2">Atrakcje i transfery</td></tr>
+      <tr><td>Bilety: Hagia Sophia, Topkapi, Göreme, Derinkuyu, Kaymaklı</td><td>~500–700 zł</td></tr>
+      <tr><td>Rejs po Bosforze + promy azjatyckie (3 os.)</td><td>~350 zł</td></tr>
+      <tr><td>Wynajem auta w Kapadocji (opcja, ~3 dni × 110 zł)</td><td>~330 zł</td></tr>
+      <tr><td>Ubezpieczenie turystyczne (3 os., 11 dni)</td><td>~150–250 zł</td></tr>
+      <tr class="btotal"><td>Razem (bez wyżywienia)</td><td>~8 050–10 150 zł</td></tr>
+      <tr class="bpp"><td>Na osobę</td><td>~2 680–3 380 zł</td></tr>
+    </table>
+    <div class="vs" style="margin-top:1.5rem">
+      💡 <strong>Wyżywienie</strong> — Turcja jest wyraźnie tańsza niż Francja i Włochy. Obiad w dobrej restauracji ~8–15 €/os., kolacja z winem ~15–25 €. Szacunek dla 3 os. przez 11 dni: <strong>~4 000–6 500 zł</strong>. Łącznie z wyżywieniem: <strong>~12 050–16 650 zł / 3 osoby</strong> (~4 020–5 550 zł/os.).
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Stambuł <span>·</span> Kapadocja <span>·</span> Wrzesień 2026</p>
+  <p style="margin-top:.4rem;font-size:.68rem">Ceny orientacyjne — do weryfikacji przed rezerwacją</p>
+</footer>
+
+</body>
+</html>
