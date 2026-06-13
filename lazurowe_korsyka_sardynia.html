@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lazurowe Wybrzeże, Korsyka & Sardynia — Wrzesień 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0D1B2A; --sand: #E8DCC8; --sand-light: #F7F4EF;
+    --blue: #2B7FD4; --blue-light: #D6EAF8;
+    --teal: #1A8C6B; --teal-light: #D4EFE6;
+    --coral: #E8613A; --coral-light: #FAEADE;
+    --gold: #C4862A; --gold-light: #FDF0D9;
+    --text: #1a1a2e; --muted: #6b7280;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--sand-light); color: var(--text); line-height: 1.6; }
+
+  .hero { background: var(--navy); color: white; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 40% at 15% 50%, rgba(196,134,42,0.15) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 50% 60%, rgba(43,127,212,0.15) 0%, transparent 70%), radial-gradient(ellipse 40% 35% at 85% 45%, rgba(26,140,107,0.15) 0%, transparent 70%); pointer-events: none; }
+  .hero-eyebrow { font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--sand); opacity: .65; margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem,6vw,5rem); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; margin-bottom: .5rem; }
+  .hero h1 .amp { font-style: italic; font-weight: 400; color: var(--coral); }
+  .hero-subtitle { font-family: 'Playfair Display', serif; font-size: clamp(.95rem,2vw,1.25rem); font-style: italic; color: var(--sand); opacity: .65; margin-bottom: 3rem; }
+  .hero-meta { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+  .hero-meta-item { text-align: center; }
+  .hero-meta-item .val { display: block; font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 600; color: white; line-height: 1; }
+  .hero-meta-item .lbl { display: block; font-size: .65rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--sand); opacity: .55; margin-top: .3rem; }
+  .hero-chapters { display: flex; gap: 0; margin-top: 3rem; border: 1px solid rgba(255,255,255,.1); border-radius: 10px; overflow: hidden; }
+  .hero-chapter { padding: .7rem 1.4rem; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+  .ch-gold { background: rgba(196,134,42,.2); color: #F0C06A; }
+  .ch-blue { background: rgba(43,127,212,.2); color: #8EC5F5; }
+  .ch-teal { background: rgba(26,140,107,.2); color: #74DEBC; }
+  .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: .4rem; color: rgba(255,255,255,.3); font-size: .62rem; letter-spacing: .15em; text-transform: uppercase; }
+  .hero-scroll::after { content: ''; display: block; width: 1px; height: 2.5rem; background: rgba(255,255,255,.2); animation: pulse-line 2s ease-in-out infinite; }
+  @keyframes pulse-line { 0%,100%{opacity:.2} 50%{opacity:.6} }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .summary { background: white; border-bottom: 1px solid rgba(0,0,0,.06); padding: 3rem 0; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); }
+  .summary-item { padding: 1rem 1.1rem; border-right: 1px solid rgba(0,0,0,.07); }
+  .summary-item:last-child { border-right: none; }
+  .s-label { font-size: .62rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: .35rem; }
+  .s-val { font-family: 'Playfair Display', serif; font-size: .92rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+  .s-sub { font-size: .7rem; color: var(--muted); margin-top: .1rem; }
+
+  .section-head { padding: 4rem 0 2rem; }
+  .section-eyebrow { display: flex; align-items: center; gap: .6rem; font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; margin-bottom: .6rem; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .dot-gold{background:var(--gold)} .dot-blue{background:var(--blue)} .dot-teal{background:var(--teal)} .dot-coral{background:var(--coral)}
+  .eye-gold{color:var(--gold)} .eye-blue{color:var(--blue)} .eye-teal{color:var(--teal)}
+  .section-head h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem,5vw,2.8rem); font-weight: 700; line-height: 1.1; color: var(--navy); }
+  .section-head p { font-size: .9rem; color: var(--muted); margin-top: .5rem; font-style: italic; }
+
+  .days { padding-bottom: 3rem; }
+  .day-card { display: grid; grid-template-columns: 72px 1fr; gap: 0 1.25rem; position: relative; }
+  .day-left { display: flex; flex-direction: column; align-items: center; padding-top: 1.1rem; }
+  .day-num { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 600; color: white; flex-shrink: 0; z-index: 1; }
+  .day-num-gold{background:var(--gold)} .day-num-blue{background:var(--blue)} .day-num-teal{background:var(--teal)}
+  .day-line { width: 1px; flex: 1; min-height: 1.5rem; margin-top: 6px; }
+  .day-line-gold{background:rgba(196,134,42,.25)} .day-line-blue{background:rgba(43,127,212,.2)} .day-line-teal{background:rgba(26,140,107,.2)}
+  .day-right { background: white; border: 1px solid rgba(0,0,0,.06); border-radius: 10px; padding: 1.1rem 1.3rem; margin-bottom: .6rem; }
+  .day-meta { font-size: .65rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
+  .day-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: .35rem; line-height: 1.3; }
+  .day-desc { font-size: .855rem; color: #4b5563; line-height: 1.65; }
+  .day-tag { display: inline-block; font-size: .62rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; margin-top: .5rem; margin-right: 3px; }
+  .tag-gold{background:var(--gold-light);color:#7a4d0b} .tag-blue{background:var(--blue-light);color:#1a5ca8} .tag-teal{background:var(--teal-light);color:#0f5e47}
+
+  .transfer-bar { color: white; padding: 3rem 2rem; text-align: center; position: relative; overflow: hidden; margin: 1.5rem 0; }
+  .transfer-bar::before { content: ''; position: absolute; inset: 0; pointer-events: none; }
+  .transfer-bar-ferry { background: var(--navy); }
+  .transfer-bar-ferry::before { background: radial-gradient(ellipse 80% 100% at 50% 50%, rgba(43,127,212,.2) 0%, transparent 70%); }
+  .transfer-bar-mini { background: #1a2d1a; }
+  .transfer-bar-mini::before { background: radial-gradient(ellipse 80% 100% at 50% 50%, rgba(26,140,107,.25) 0%, transparent 70%); }
+  .waves { position: absolute; bottom: 0; left: 0; right: 0; height: 36px; overflow: hidden; opacity: .12; }
+  .wave { position: absolute; bottom: -5px; width: 200%; height: 36px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40'%3E%3Cpath d='M0,20 C150,35 350,5 600,20 C850,35 1050,5 1200,20 L1200,40 L0,40 Z' fill='%23fff'/%3E%3C/svg%3E") repeat-x; background-size: 600px 36px; animation: wave-move 6s linear infinite; }
+  .wave:nth-child(2) { animation-delay: -3s; opacity: .6; animation-duration: 9s; }
+  @keyframes wave-move { from{transform:translateX(0)} to{transform:translateX(-600px)} }
+  .transfer-eyebrow { font-size: .68rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-bottom: .8rem; }
+  .te-coral{color:var(--coral)} .te-teal{color:#74DEBC}
+  .transfer-bar h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem,3.5vw,2rem); font-weight: 700; margin-bottom: .4rem; }
+  .transfer-bar p { font-size: .85rem; color: rgba(255,255,255,.6); margin-bottom: 1.5rem; font-style: italic; }
+  .route { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .route-port { text-align: center; }
+  .route-port .port-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: white; }
+  .route-port .port-sub { font-size: .65rem; color: rgba(255,255,255,.45); letter-spacing: .08em; text-transform: uppercase; }
+  .route-arrow { display: flex; flex-direction: column; align-items: center; gap: .2rem; }
+  .arrow-line { width: 70px; height: 1px; background: var(--coral); position: relative; }
+  .arrow-line::after { content: '›'; position: absolute; right: -5px; top: -10px; font-size: 1.1rem; color: var(--coral); }
+  .arrow-label { font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.45); white-space: nowrap; }
+
+  .practicalities { padding: 4rem 0; background: white; border-top: 1px solid rgba(0,0,0,.06); border-bottom: 1px solid rgba(0,0,0,.06); }
+  .prac-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 1.25rem; margin-top: 2rem; }
+  .prac-card { border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 1.25rem; }
+  .prac-icon { font-size: 1.2rem; margin-bottom: .6rem; }
+  .prac-title { font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 600; color: var(--navy); margin-bottom: .35rem; }
+  .prac-text { font-size: .8rem; color: #4b5563; line-height: 1.6; }
+
+  .budget { padding: 4rem 0; }
+  .budget-table { width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: .875rem; }
+  .budget-table tr { border-bottom: 1px solid rgba(0,0,0,.06); }
+  .budget-table td { padding: .7rem .5rem; color: #374151; }
+  .budget-table td:last-child { text-align: right; font-weight: 500; color: var(--navy); white-space: nowrap; }
+  .budget-table .section-row td { font-size: .65rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding-top: 1.1rem; padding-bottom: .3rem; border-bottom: none; }
+  .budget-table .total-row td { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--navy); border-top: 2px solid var(--navy); border-bottom: none; padding-top: .9rem; }
+  .budget-table .per-person td { font-size: .78rem; color: var(--muted); font-style: italic; border-bottom: none; padding-top: .25rem; }
+
+  footer { background: var(--navy); color: rgba(255,255,255,.38); text-align: center; padding: 2rem; font-size: .75rem; letter-spacing: .04em; }
+  footer span { color: var(--coral); }
+
+  @media (max-width:600px) {
+    .summary-grid { grid-template-columns: 1fr 1fr; }
+    .summary-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,.07); }
+    .summary-item:nth-child(odd) { border-right: 1px solid rgba(0,0,0,.07); }
+    .day-card { grid-template-columns: 44px 1fr; gap: 0 .65rem; }
+    .hero-chapters { flex-direction: column; }
+    .arrow-line { width: 40px; }
+  }
+  @media (prefers-reduced-motion:reduce) { .wave,.hero-scroll::after { animation: none; } }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <p class="hero-eyebrow">Plan wyjazdu grupowego · Wrzesień 2026</p>
+  <h1>Lazurowe Wybrzeże,<br>Korsyka <span class="amp">&</span> Sardynia</h1>
+  <p class="hero-subtitle">Trzy destynacje, dwa promy, jedna droga na południe</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><span class="val">12</span><span class="lbl">nocy</span></div>
+    <div class="hero-meta-item"><span class="val">3</span><span class="lbl">osoby</span></div>
+    <div class="hero-meta-item"><span class="val">17–30</span><span class="lbl">września</span></div>
+    <div class="hero-meta-item"><span class="val">3</span><span class="lbl">bazy noclegowe</span></div>
+  </div>
+  <div class="hero-chapters">
+    <div class="hero-chapter ch-gold">I · Lazurowe Wybrzeże · 3 noce</div>
+    <div class="hero-chapter ch-blue">II · Korsyka · 4 noce</div>
+    <div class="hero-chapter ch-teal">III · Sardynia · 4 noce</div>
+  </div>
+  <div class="hero-scroll">scroll</div>
+</section>
+
+<section class="summary">
+  <div class="container">
+    <div class="summary-grid">
+      <div class="summary-item">
+        <div class="s-label">Wylot</div>
+        <div class="s-val">GDN → Nicea</div>
+        <div class="s-sub">17 wrz (czw), Wizz Air bezpośredni</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Baza Riwiera</div>
+        <div class="s-val">Nicea (NCE)</div>
+        <div class="s-sub">3 noce, bez auta</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Prom → Korsyka</div>
+        <div class="s-val">Nicea → Bastia</div>
+        <div class="s-sub">20 wrz (nd) wieczór, ~7 h</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Baza Korsyka</div>
+        <div class="s-val">Porto-Vecchio</div>
+        <div class="s-sub">4 noce, apartament 2-syp.</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Prom → Sardynia</div>
+        <div class="s-val">Bonifacio → S. Teresa</div>
+        <div class="s-sub">25 wrz (pt), ~50 min</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Baza Sardynia</div>
+        <div class="s-val">San Teodoro</div>
+        <div class="s-sub">4 noce, apartament 2-syp.</div>
+      </div>
+      <div class="summary-item">
+        <div class="s-label">Powrót</div>
+        <div class="s-val">Olbia → GDN</div>
+        <div class="s-sub">29 wrz (wt), 10:00 OLB → 30 wrz 00:50 GDN</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RIVIERA -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow eye-gold"><span class="dot dot-gold"></span>Część pierwsza — Lazurowe Wybrzeże</div>
+      <h2>Trzy noce<br><em style="font-style:italic;font-weight:400">na Riwierze Francuskiej</em></h2>
+      <p>Baza: Nicea (Nice) — pieszo i pociągiem, bez samochodu</p>
+    </div>
+    <div style="background:var(--gold-light);border:1px solid rgba(196,134,42,.2);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:.83rem;color:#5a3a08;line-height:1.6;">
+      <strong>Dlaczego bez auta?</strong> Nicea, Cannes, Monaco i Menton są doskonale połączone pociągiem regionalnym TER — szybciej, taniej i bez stresu z parkowaniem na wąskich uliczkach Riwierze. Auto wynajmujesz dopiero w Bastii na Korsyce.
+    </div>
+    <div class="days">
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-gold">1</div><div class="day-line day-line-gold"></div></div>
+        <div class="day-right">
+          <div class="day-meta">17 wrz · czwartek</div>
+          <div class="day-title">Przylot do Nicei — Vieux-Nice i Promenade</div>
+          <div class="day-desc">Lot z Gdańska przez Warszawę (LOT) lub Paryż (Air France). Zameldowanie w bazie w centrum Nicei. Wieczorny spacer Promenade des Anglais, kolacja na Vieux-Nice — pastis, socca i ratatouille nad morzem.</div>
+          <span class="day-tag tag-gold">Przylot</span><span class="day-tag tag-gold">Stare miasto</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-gold">2</div><div class="day-line day-line-gold"></div></div>
+        <div class="day-right">
+          <div class="day-meta">18 wrz · piątek</div>
+          <div class="day-title">Monaco i Eze</div>
+          <div class="day-desc">Pociąg do Monaco (20 min, 3 €). Pałac Książęcy, Cathedral de Monaco (grób Grace Kelly), słynne kasyno Monte Carlo — do środka wstęp wolny. Po drodze powrotnej wysiadka w Eze: średniowieczne miasteczko na skale 427 m n.p.m. z panoramicznym widokiem na całą Riwierę.</div>
+          <span class="day-tag tag-gold">Monaco</span><span class="day-tag tag-gold">Eze</span><span class="day-tag tag-gold">Pociąg 20 min</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-gold">3</div><div class="day-line day-line-gold"></div></div>
+        <div class="day-right">
+          <div class="day-meta">19 wrz · sobota</div>
+          <div class="day-title">Cannes i Antibes</div>
+          <div class="day-desc">Pociąg do Cannes (30 min, 7 €). La Croisette, stare miasto Le Suquet, widok na wyspy Lérins. Po południu Antibes — stare miasto z murami nad morzem, muzeum Picassa (Château Grimaldi). Powrót do Nicei wieczorem.</div>
+          <span class="day-tag tag-gold">Cannes</span><span class="day-tag tag-gold">Antibes</span><span class="day-tag tag-gold">Pociąg 30 min</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-gold">4</div></div>
+        <div class="day-right">
+          <div class="day-meta">20 wrz · niedziela — wieczór: prom</div>
+          <div class="day-title">Wolny ranek · Nocna przeprawa na Korsykę</div>
+          <div class="day-desc">Wolny ranek w Nicei — targ kwiatowy Cours Saleya, ostatni spacer Promenade, zakupy. Wieczorem wymeldowanie, przejście do portu. Wsiadamy na nocny prom Corsica Ferries (~20:00–22:00). Kabiny do zarezerwowania z wyprzedzeniem.</div>
+          <span class="day-tag tag-gold">Targ Cours Saleya</span><span class="day-tag tag-gold">Prom nocny ⛵</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FERRY 1 -->
+<div class="transfer-bar transfer-bar-ferry">
+  <div class="waves"><div class="wave"></div><div class="wave"></div></div>
+  <p class="transfer-eyebrow te-coral">Noc z 20 na 21 września</p>
+  <h3>Nocna przeprawa na Korsykę</h3>
+  <p>Z Lazurowego Wybrzeża na wyspę piękności — bez lotu, nocą przez morze</p>
+  <div class="route">
+    <div class="route-port"><div class="port-name">Nicea</div><div class="port-sub">Lazurowe Wybrzeże · Francja</div></div>
+    <div class="route-arrow"><div class="arrow-line"></div><div class="arrow-label">~6–8 godz. · Corsica Ferries</div></div>
+    <div class="route-port"><div class="port-name">Bastia</div><div class="port-sub">Północna Korsyka · Francja</div></div>
+  </div>
+  <p style="margin-top:1.2rem;margin-bottom:0;font-size:.78rem;color:rgba(255,255,255,.5)">Rejs ok. 20:00–22:00 z Nicei → przybycie do Bastii rano (~4:00–8:00). Kabina dla 3 os. od ok. 120–200 €. Odbiór auta w Bastii.</p>
+</div>
+
+<!-- CORSICA -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow eye-blue"><span class="dot dot-blue"></span>Część druga — Korsyka</div>
+      <h2>Cztery noce<br><em style="font-style:italic;font-weight:400">na wyspie piękności</em></h2>
+      <p>Baza: Porto-Vecchio — południowa Korsyka (dojazd z Bastii ~2,5 godz.)</p>
+    </div>
+    <div class="days">
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-blue">5</div><div class="day-line day-line-blue"></div></div>
+        <div class="day-right">
+          <div class="day-meta">21 wrz · poniedziałek — rano</div>
+          <div class="day-title">Przybicie do Bastii — przejazd na południe</div>
+          <div class="day-desc">Przybicie do Bastii rano (~6:00–8:00). Odbiór auta w porcie. Przejazd przez korsykańskie góry do Porto-Vecchio (~2,5 godz.). Zameldowanie w bazie. Po południu spacer po Bonifacio (30 min od bazy) — dramatyczne białe klify, cytadela zawieszona nad morzem.</div>
+          <span class="day-tag tag-blue">Bastia → Porto-Vecchio</span><span class="day-tag tag-blue">Bonifacio</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-blue">6</div><div class="day-line day-line-blue"></div></div>
+        <div class="day-right">
+          <div class="day-meta">22 wrz · wtorek</div>
+          <div class="day-title">Plaże południa Korsyki</div>
+          <div class="day-desc">Plage de Santa Giulia i Plage de Palombaggia — regularnie wymieniane wśród najpiękniejszych plaż Europy. Zaledwie 15–20 min od bazy. Spokojny dzień przy morzu po nocnej podróży promem.</div>
+          <span class="day-tag tag-blue">Plaże</span><span class="day-tag tag-blue">15 min od bazy</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-blue">7</div><div class="day-line day-line-blue"></div></div>
+        <div class="day-right">
+          <div class="day-meta">23 wrz · środa</div>
+          <div class="day-title">Górskie serce Korsyki — Córte</div>
+          <div class="day-desc">~1,5 godz. jazdy przez korsykańskie góry. Cytadela Córte — duchowa stolica wyspy. Kanion Gorges de la Restonica z lodowatymi basenami górskimi. Degustacja serów brocciu i charcuterie. Powrót przez przełęcz o zachodzie słońca.</div>
+          <span class="day-tag tag-blue">Góry</span><span class="day-tag tag-blue">Córte</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-blue">8</div><div class="day-line day-line-blue"></div></div>
+        <div class="day-right">
+          <div class="day-meta">24 wrz · czwartek</div>
+          <div class="day-title">Sartène, Ajaccio i pożegnanie z Korsyką</div>
+          <div class="day-desc">Rano: Sartène — najpiękniejsze korsykańskie miasto, surowe granity i wąskie uliczki. Popołudnie: Ajaccio (~1,5 godz.) — Dom urodzenia Napoleona, Musée Fesch. Ostatnia kolacja w Porto-Vecchio nad zatoką.</div>
+          <span class="day-tag tag-blue">Sartène</span><span class="day-tag tag-blue">Ajaccio</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FERRY 2 -->
+<div class="transfer-bar transfer-bar-mini">
+  <div class="waves"><div class="wave"></div><div class="wave"></div></div>
+  <p class="transfer-eyebrow te-teal">Dzień 9 · 25 września · piątek</p>
+  <h3>Przeprawa przez cieśninę Bonifacio</h3>
+  <p>13 kilometrów, dwa światy — z Francji do Włoch w 50 minut</p>
+  <div class="route">
+    <div class="route-port"><div class="port-name">Bonifacio</div><div class="port-sub">Korsyka · Francja</div></div>
+    <div class="route-arrow"><div class="arrow-line"></div><div class="arrow-label">~50 min · Moby Lines</div></div>
+    <div class="route-port"><div class="port-name">Santa Teresa Gallura</div><div class="port-sub">Sardynia · Italia</div></div>
+  </div>
+  <p style="margin-top:1.2rem;margin-bottom:0;font-size:.78rem;color:rgba(255,255,255,.5)">Oddanie auta w Bonifacio. Prom pieszy od ~30 €/os. Odbiór nowego auta w Santa Teresa Gallura.</p>
+</div>
+
+<!-- SARDINIA -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow eye-teal"><span class="dot dot-teal"></span>Część trzecia — Sardynia</div>
+      <h2>Cztery noce<br><em style="font-style:italic;font-weight:400">na włoskiej wyspie</em></h2>
+      <p>Baza: okolice San Teodoro / Olbii — północna Sardynia</p>
+    </div>
+    <div class="days">
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-teal">9</div><div class="day-line day-line-teal"></div></div>
+        <div class="day-right">
+          <div class="day-meta">25 wrz · piątek</div>
+          <div class="day-title">Przyjazd — zameldowanie w bazie</div>
+          <div class="day-desc">Prom z Bonifacio, odbiór auta w Santa Teresa. Dojazd do bazy w okolicach San Teodoro lub Olbii (~45 min). Odpoczynek, kąpiel. Wieczorna kolacja z bottargą — ikrą muleta, sardyńskim specjałem.</div>
+          <span class="day-tag tag-teal">Przyjazd</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-teal">10</div><div class="day-line day-line-teal"></div></div>
+        <div class="day-right">
+          <div class="day-meta">26 wrz · sobota</div>
+          <div class="day-title">Archipelag La Maddalena</div>
+          <div class="day-desc">Prom z Palau (15 min) na wyspy La Maddalena i Caprera. Plaże Cala Corsara i Cala Coticcio — legendarnie przejrzysta woda w odcieniach turkusu. Powrót do bazy wieczorem.</div>
+          <span class="day-tag tag-teal">Prom Palau</span><span class="day-tag tag-teal">Pływanie</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-teal">11</div><div class="day-line day-line-teal"></div></div>
+        <div class="day-right">
+          <div class="day-meta">27 wrz · niedziela</div>
+          <div class="day-title">Costa Smeralda i Porto Cervo</div>
+          <div class="day-desc">Plaże Capriccioli, Grande Pevero, Liscia Ruja — szmaragdowe wody, białe skały granitowe. Wieczorny spacer po Porto Cervo — aperitivo nad zatoką, przedostatnia włoska kolacja.</div>
+          <span class="day-tag tag-teal">Plaże</span><span class="day-tag tag-teal">Porto Cervo</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-teal">12</div><div class="day-line day-line-teal"></div></div>
+        <div class="day-right">
+          <div class="day-meta">28 wrz · poniedziałek</div>
+          <div class="day-title">Nuraghe Su Nuraxi + Orgosolo</div>
+          <div class="day-desc">~2 godz. jazdy w głąb wyspy. Prehistoryczne nuraghi Su Nuraxi (lista UNESCO) — 3500 lat historii na kamiennych wieżach. Murale polityczne w Orgosolo. Ostatnia kolacja w bazie — pożegnanie z Sardynią.</div>
+          <span class="day-tag tag-teal">UNESCO</span><span class="day-tag tag-teal">Wnętrze wyspy</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-left"><div class="day-num day-num-teal">13</div></div>
+        <div class="day-right">
+          <div class="day-meta">29–30 wrz · wtorek/środa</div>
+          <div class="day-title">Powrót do Gdańska</div>
+          <div class="day-desc">Rano wymeldowanie. Oddanie auta na lotnisku Olbia (OLB). Lot o 10:00 z Olbii z 1 przesiadką — przylot do Gdańska 30 wrz (śr) o 00:50. Łącznie 1 041 zł za 3 osoby.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICALITIES -->
+<section class="practicalities">
+  <div class="container">
+    <div class="section-eyebrow"><span class="dot dot-coral"></span><span style="color:var(--coral)">Informacje praktyczne</span></div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--navy);margin-top:.5rem">Co warto wiedzieć</h2>
+    <div class="prac-grid">
+      <div class="prac-card">
+        <div class="prac-icon">✈️</div>
+        <div class="prac-title">Loty</div>
+        <div class="prac-text">Wylot: Wizz Air GDN → NCE bezpośredni, 17 wrz 10:30–13:00, 606 zł / 3 os. Powrót: OLB → GDN 29 wrz 10:00, przesiadka, przylot 30 wrz 00:50, 1 041 zł / 3 os. Łącznie loty: ~1 647 zł za 3 osoby.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🏠</div>
+        <div class="prac-title">Noclegi — Nicea</div>
+        <div class="prac-text">3 noce, 2 pokoje w hotelu lub apartament przy Vieux-Nice lub w pobliżu stacji kolejowej. Od ~130–200 €/noc za pokój. Booking.com lub Airbnb.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🚂</div>
+        <div class="prac-title">Transport — Riwiera</div>
+        <div class="prac-text">Pociąg TER Côte d'Azur: Nicea–Monaco 20 min (3 €), Nicea–Cannes 30 min (7 €). Bez auta — bez stresu z parkowaniem i wąskimi uliczkami Riwiery.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">⛵</div>
+        <div class="prac-title">Prom Nicea → Bastia</div>
+        <div class="prac-text">Corsica Ferries. Rejs wieczorny (~20:00–22:00), przybycie rano. Kabina 3-os. od ~120–200 €. Bilety piesze od ~30 €/os. Rezerwuj z 2–3 mies. wyprzedzenia przez corsica-ferries.com.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">⛵</div>
+        <div class="prac-title">Prom Bonifacio → S. Teresa</div>
+        <div class="prac-text">Moby Lines / Ichnusa Lines. ~50 min, 5–7 rejsów dziennie. Od ~30–40 €/os. (pieszy). Auta nie transportuj promem — dwa osobne wynajmy.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🚗</div>
+        <div class="prac-title">Wynajem aut</div>
+        <div class="prac-text">Auto dopiero od Korsyki — 2 wynajmy: Bastia (4 dni, do Bonifacio) + Santa Teresa (4 dni, do Olbii). Rentalcars lub DiscoverCars. Od ~35–50 €/dobę.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🌡️</div>
+        <div class="prac-title">Wrzesień w regionie</div>
+        <div class="prac-text">Riwiera: 24–27°C. Korsyka: 25–28°C, woda 24°C. Sardynia: 26°C, woda 25°C. Tłumy i ceny wyraźnie niższe niż w sierpniu — idealny czas na wszystkie trzy destynacje.</div>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">📋</div>
+        <div class="prac-title">Dokumenty</div>
+        <div class="prac-text">Dowód osobisty wystarczy — cała trasa to UE (Francja + Włochy). Karta EKUZ. Prawo jazdy. Karta bankowa z płatnościami za granicą. Krem SPF 50+.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="budget">
+  <div class="container">
+    <div class="section-eyebrow"><span class="dot dot-coral"></span><span style="color:var(--coral)">Budżet</span></div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--navy);margin-top:.5rem">Szacunkowy koszt — 3 osoby</h2>
+    <table class="budget-table">
+      <tr class="section-row"><td colspan="2">Loty</td></tr>
+      <tr><td>GDN → Nicea — Wizz Air bezpośredni (3 os.)</td><td>606 zł</td></tr>
+      <tr><td>Olbia → GDN — z przesiadką (3 os.)</td><td>1 041 zł</td></tr>
+      <tr class="section-row"><td colspan="2">Promy</td></tr>
+      <tr><td>Nicea → Bastia (3 os. + kabina)</td><td>~800–1 100 zł</td></tr>
+      <tr><td>Bonifacio → Santa Teresa (3 os., pieszy)</td><td>~130–180 zł</td></tr>
+      <tr class="section-row"><td colspan="2">Wynajem aut</td></tr>
+      <tr><td>Auto #1 — Korsyka (Bastia, 4 dni)</td><td>~550–800 zł</td></tr>
+      <tr><td>Auto #2 — Sardynia (S. Teresa, 4 dni)</td><td>~550–800 zł</td></tr>
+      <tr class="section-row"><td colspan="2">Noclegi</td></tr>
+      <tr><td>Nicea — 3 noce × 2 pokoje × ~160 €/pokój</td><td>~2 060 zł</td></tr>
+      <tr><td>Korsyka — 4 noce × ~550 zł (apartament)</td><td>~2 200 zł</td></tr>
+      <tr><td>Sardynia — 4 noce × ~500 zł (apartament)</td><td>~2 000 zł</td></tr>
+      <tr class="total-row"><td>Razem (bez wyżywienia i atrakcji)</td><td>~9 940–10 640 zł</td></tr>
+      <tr class="per-person"><td>Na osobę</td><td>~3 310–3 550 zł</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <p>Lazurowe Wybrzeże <span>·</span> Korsyka <span>·</span> Sardynia <span>·</span> Wrzesień 2026</p>
+  <p style="margin-top:.4rem;font-size:.68rem">Ceny orientacyjne — do weryfikacji przed rezerwacją</p>
+</footer>
+
+</body>
+</html>
