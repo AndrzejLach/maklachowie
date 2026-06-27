@@ -3,91 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Turcja — plan podróży · 25.09–5.10.2026</title>
+<title>Turcja — plan podróży · 23–30.09.2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0F3A40;
-    --teal:#14606B;
-    --teal-soft:#E3EEEC;
-    --amber:#BE8419;
-    --amber-soft:#F4EAD2;
-    --rose:#C0512F;
-    --rose-soft:#F6E4DC;
-    --alert:#A8341A;
-    --paper:#F6F2E9;
-    --card:#FFFFFF;
-    --line:rgba(15,58,64,.14);
-    --muted:#566463;
-    --mono:'Space Mono',ui-monospace,monospace;
-    --disp:'Bricolage Grotesque',system-ui,sans-serif;
-    --body:'Inter',system-ui,sans-serif;
+    --ink:#0F3A40;--teal:#14606B;--teal-soft:#E3EEEC;--amber:#BE8419;--amber-soft:#F4EAD2;
+    --rose:#C0512F;--rose-soft:#F6E4DC;--alert:#A8341A;--paper:#F6F2E9;--card:#FFFFFF;
+    --line:rgba(15,58,64,.14);--muted:#566463;
+    --mono:'Space Mono',ui-monospace,monospace;--disp:'Bricolage Grotesque',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    margin:0;background:var(--paper);color:var(--ink);
-    font-family:var(--body);font-size:16px;line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
   .wrap{max-width:880px;margin:0 auto;padding:0 22px}
 
-  /* ---------- HERO ---------- */
-  header.hero{
-    background:var(--ink);color:var(--paper);
-    padding:54px 0 40px;position:relative;overflow:hidden;
-  }
-  header.hero::after{
-    content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;
-    background:radial-gradient(circle at center,rgba(190,132,25,.28),transparent 62%);
-    pointer-events:none;
-  }
-  .eyebrow{
-    font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--amber);margin:0 0 14px;
-  }
-  .hero h1{
-    font-family:var(--disp);font-weight:800;line-height:.92;letter-spacing:-.02em;
-    font-size:clamp(3.4rem,13vw,6.6rem);margin:0;
-  }
+  header.hero{background:var(--ink);color:var(--paper);padding:54px 0 40px;position:relative;overflow:hidden}
+  header.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;background:radial-gradient(circle at center,rgba(190,132,25,.28),transparent 62%);pointer-events:none}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin:0 0 14px}
+  .hero h1{font-family:var(--disp);font-weight:800;line-height:.92;letter-spacing:-.02em;font-size:clamp(3.4rem,13vw,6.6rem);margin:0}
   .hero h1 em{font-style:normal;color:var(--amber)}
-  .hero .sub{
-    margin:18px 0 26px;font-size:1.05rem;color:rgba(246,242,233,.86);max-width:48ch;
-  }
-  .route{
-    display:flex;flex-wrap:wrap;align-items:center;gap:10px;
-    font-family:var(--mono);font-size:.86rem;
-  }
+  .hero .sub{margin:18px 0 26px;font-size:1.05rem;color:rgba(246,242,233,.86);max-width:50ch}
+  .route{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:var(--mono);font-size:.86rem}
   .route .node{padding:5px 11px;border:1px solid rgba(246,242,233,.32);border-radius:999px}
   .route .node.go{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:700}
   .route .arr{opacity:.55}
-  .facts{
-    display:flex;flex-wrap:wrap;gap:0;margin-top:30px;
-    border-top:1px solid rgba(246,242,233,.22);
-  }
+  .facts{display:flex;flex-wrap:wrap;gap:0;margin-top:30px;border-top:1px solid rgba(246,242,233,.22)}
   .facts div{flex:1 1 120px;padding:16px 16px 4px 0}
   .facts .n{font-family:var(--disp);font-weight:700;font-size:1.7rem;line-height:1}
   .facts .l{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,233,.6);margin-top:6px}
 
-  /* ---------- SECTION SHELL ---------- */
   section{padding:46px 0}
   .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
   .sec-head .idx{font-family:var(--mono);font-size:.8rem;color:var(--amber);padding-top:6px}
   .sec-head h2{font-family:var(--disp);font-weight:700;letter-spacing:-.01em;font-size:clamp(1.6rem,5vw,2.2rem);margin:0}
   .sec-head p{margin:4px 0 0;color:var(--muted);font-size:.95rem}
 
-  /* ---------- TRANSPORT LEGS ---------- */
   .legs{display:flex;flex-direction:column;gap:12px}
-  .flight{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;
-    display:grid;grid-template-columns:1fr auto;overflow:hidden;
-  }
+  .flight{background:var(--card);border:1px solid var(--line);border-radius:14px;display:grid;grid-template-columns:1fr auto;overflow:hidden}
   .flight .body{padding:18px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px}
   .flight .leg{display:flex;align-items:center;gap:16px}
   .flight .pt{text-align:center;min-width:64px}
-  .flight .pt .time{font-family:var(--mono);font-weight:700;font-size:1.25rem;line-height:1}
+  .flight .pt .time{font-family:var(--mono);font-weight:700;font-size:1.2rem;line-height:1}
   .flight .pt .code{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin-top:5px;letter-spacing:.08em}
   .flight .path{display:flex;flex-direction:column;align-items:center;min-width:88px;color:var(--muted)}
   .flight .path .dur{font-family:var(--mono);font-size:.68rem}
@@ -96,71 +54,44 @@
   .flight .meta{display:flex;flex-direction:column;gap:3px}
   .flight .car{font-weight:600;font-size:.92rem}
   .flight .note{font-size:.8rem;color:var(--muted)}
-  .flight .tag{
-    align-self:stretch;display:flex;align-items:center;justify-content:center;
-    writing-mode:vertical-rl;transform:rotate(180deg);
-    font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
-    padding:0 8px;font-weight:700;background:var(--teal-soft);color:var(--teal);
-  }
+  .flight .tag{align-self:stretch;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;padding:0 8px;font-weight:700;background:var(--amber-soft);color:var(--amber)}
+  .flight.dom .tag{background:var(--rose-soft);color:var(--rose)}
 
-  /* ground transport (train / bus) */
-  .hop{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;
-    display:flex;align-items:center;gap:18px;padding:14px 20px;
-    border-left:4px solid var(--amber);
-  }
-  .hop .mode{
-    font-family:var(--mono);font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--amber);min-width:84px;
-  }
-  .hop .info{flex:1}
-  .hop .rt{font-weight:600;font-size:.95rem}
-  .hop .dt{font-family:var(--mono);font-size:.76rem;color:var(--muted);margin-top:2px}
-  .hop .stamp{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  .pricebar{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;font-family:var(--mono);font-size:.82rem;color:var(--muted);display:flex;flex-direction:column;gap:8px}
+  .pricebar b{font-family:var(--disp);color:var(--ink)}
+  .pricebar .ok{color:var(--teal)}
+  .pricebar .x{color:var(--rose)}
 
-  .pricebar{
-    margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:16px 20px;display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline;
-  }
-  .pricebar .pp{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
-  .pricebar .pp b{font-family:var(--disp);color:var(--ink);font-size:1rem}
-  .pricebar .pp .x{color:var(--rose)}
-  .pricebar .pp .ok{color:var(--teal)}
-
-  /* ---------- TIMELINE ---------- */
   .legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:26px;font-family:var(--mono);font-size:.74rem}
   .legend span{display:inline-flex;align-items:center;gap:7px}
   .dot{width:11px;height:11px;border-radius:50%;display:inline-block}
-  .c-ist{background:var(--teal)} .c-ank{background:var(--amber)} .c-cap{background:var(--rose)} .c-fly{background:var(--ink)}
+  .c-ist{background:var(--teal)} .c-cap{background:var(--rose)} .c-fly{background:var(--ink)}
 
   .timeline{position:relative;margin-left:6px}
   .day{position:relative;padding:0 0 26px 30px;border-left:2px solid var(--line)}
   .day:last-child{border-left-color:transparent}
   .day::before{content:"";position:absolute;left:-7px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 4px var(--paper)}
-  .day.ist::before{background:var(--teal)} .day.ank::before{background:var(--amber)}
-  .day.cap::before{background:var(--rose)} .day.fly::before{background:var(--ink)}
+  .day.ist::before{background:var(--teal)} .day.cap::before{background:var(--rose)} .day.fly::before{background:var(--ink)}
   .day .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
   .day .date{font-family:var(--mono);font-weight:700;font-size:.92rem}
   .day .dow{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
   .day .where{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-left:auto}
   .w-ist{background:var(--teal-soft);color:var(--teal)}
-  .w-ank{background:var(--amber-soft);color:var(--amber)}
   .w-cap{background:var(--rose-soft);color:var(--rose)}
   .w-fly{background:#E7EBEA;color:var(--ink)}
   .day h3{font-family:var(--disp);font-weight:600;font-size:1.12rem;margin:7px 0 4px}
   .day p{margin:0;color:var(--muted);font-size:.94rem}
   .day .air{font-family:var(--mono);font-size:.78rem;color:var(--ink);margin-top:7px;display:inline-block;background:#fff;border:1px solid var(--line);border-radius:8px;padding:4px 10px}
 
-  /* ---------- ALERTS ---------- */
   .alerts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .alert{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;border-left:4px solid var(--amber)}
   .alert.good{border-left-color:var(--teal)}
+  .alert.hot{border-left-color:var(--alert)}
   .alert .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:7px}
-  .alert.good .k{color:var(--teal)}
+  .alert.good .k{color:var(--teal)} .alert.hot .k{color:var(--alert)}
   .alert h4{font-family:var(--disp);font-weight:600;font-size:1.02rem;margin:0 0 6px}
   .alert p{margin:0;font-size:.9rem;color:var(--muted)}
 
-  /* ---------- COLUMNS ---------- */
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:30px}
   ol.steps{margin:0;padding:0;list-style:none;counter-reset:s}
   ol.steps li{counter-increment:s;position:relative;padding:11px 0 11px 40px;border-bottom:1px solid var(--line);font-size:.94rem}
@@ -183,12 +114,8 @@
     .alerts,.cols{grid-template-columns:1fr}
     .flight .body{gap:14px 18px}
     .flight .tag{writing-mode:horizontal-tb;transform:none;padding:6px}
-    .hop{flex-wrap:wrap}
   }
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    .rv{opacity:1;transform:none;transition:none}
-  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -197,19 +124,19 @@
   <div class="wrap">
     <p class="eyebrow">Plan podróży · 3 osoby · jesień 2026</p>
     <h1>Tur<em>cja</em></h1>
-    <p class="sub">Jeden łuk na wschód: w głąb lądu pociągiem i autobusem, z powrotem lotem. Wszystkie odcinki już zaklepane.</p>
+    <p class="sub">Stambuł i Kapadocja w jednym tygodniu. Wieczorne loty wewnętrzne zostawiają pełne dni w obu miejscach.</p>
     <div class="route">
       <span class="node go">GDN</span><span class="arr">→</span>
       <span class="node">Stambuł</span><span class="arr">→</span>
-      <span class="node">Ankara</span><span class="arr">→</span>
       <span class="node">Kapadocja</span><span class="arr">→</span>
+      <span class="node">Stambuł</span><span class="arr">→</span>
       <span class="node go">GDN</span>
     </div>
     <div class="facts">
-      <div><div class="n">11</div><div class="l">dni</div></div>
-      <div><div class="n">10</div><div class="l">nocy</div></div>
-      <div><div class="n">25.09</div><div class="l">wylot · pt</div></div>
-      <div><div class="n">05.10</div><div class="l">powrót · pon</div></div>
+      <div><div class="n">8</div><div class="l">dni</div></div>
+      <div><div class="n">7</div><div class="l">nocy</div></div>
+      <div><div class="n">23.09</div><div class="l">wylot · śr</div></div>
+      <div><div class="n">30.09</div><div class="l">powrót · śr</div></div>
     </div>
   </div>
 </header>
@@ -217,81 +144,78 @@
 <!-- TRANSPORT -->
 <section>
   <div class="wrap">
-    <div class="sec-head rv"><span class="idx">01</span><div><h2>Transport</h2><p>Zero nawracania: cały czas do przodu, a jedyny lot „wstecz” to krótki skok z Kapadocji.</p></div></div>
+    <div class="sec-head rv"><span class="idx">01</span><div><h2>Transport</h2><p>Wieczorne loty do Kapadocji i z powrotem — przeloty zjadają noce, nie dni.</p></div></div>
     <div class="legs">
 
       <div class="flight rv">
         <div class="body">
           <div class="leg">
-            <div class="pt"><div class="time">16:50</div><div class="code">GDN</div></div>
-            <div class="path"><div class="dur">2h45</div><div class="ln"></div><div class="dur">bezpośredni</div></div>
-            <div class="pt"><div class="time">20:35</div><div class="code">IST</div></div>
+            <div class="pt"><div class="time">popoł.</div><div class="code">GDN</div></div>
+            <div class="path"><div class="dur">~2h45</div><div class="ln"></div><div class="dur">bezpośredni</div></div>
+            <div class="pt"><div class="time">wiecz.</div><div class="code">IST</div></div>
           </div>
           <div class="meta">
-            <span class="when">pt 25.09 · LOT</span>
+            <span class="when">śr 23.09 · LOT</span>
             <span class="car">Gdańsk → Stambuł</span>
-            <span class="note">Przylot na IST (strona europejska).</span>
+            <span class="note">Środa = dzień bezpośredniego LOT. Przylot na IST (Europa).</span>
           </div>
         </div>
-        <div class="tag">zarezerwowany</div>
+        <div class="tag">do rezerwacji</div>
       </div>
 
-      <div class="hop rv">
-        <div class="mode">Pociąg YHT</div>
-        <div class="info">
-          <div class="rt">Stambuł (Söğütlüçeşme) → Ankara</div>
-          <div class="dt">pon 28.09 · ~4,5 h · kolej dużych prędkości</div>
+      <div class="flight dom rv">
+        <div class="body">
+          <div class="leg">
+            <div class="pt"><div class="time">20:00</div><div class="code">SAW</div></div>
+            <div class="path"><div class="dur">1h15</div><div class="ln"></div><div class="dur">bezpośredni</div></div>
+            <div class="pt"><div class="time">21:15</div><div class="code">NAV</div></div>
+          </div>
+          <div class="meta">
+            <span class="when">sob 26.09 · AJet</span>
+            <span class="car">Stambuł → Kapadocja</span>
+            <span class="note">Z SAW (Azja) na Nevşehir — ~30–40 min od Göreme. Nocny przyjazd.</span>
+          </div>
         </div>
-        <div class="stamp">bilet ~15 dni przed</div>
+        <div class="tag">do rezerwacji</div>
       </div>
 
-      <div class="hop rv">
-        <div class="mode">Autobus</div>
-        <div class="info">
-          <div class="rt">Ankara → Göreme (Kapadocja)</div>
-          <div class="dt">wt 29.09 · ~4 h · dworzec AŞTİ</div>
+      <div class="flight dom rv">
+        <div class="body">
+          <div class="leg">
+            <div class="pt"><div class="time">21:45</div><div class="code">NAV</div></div>
+            <div class="path"><div class="dur">1h30</div><div class="ln"></div><div class="dur">bezpośredni</div></div>
+            <div class="pt"><div class="time">23:15</div><div class="code">SAW</div></div>
+          </div>
+          <div class="meta">
+            <span class="when">wt 29.09 · AJet</span>
+            <span class="car">Kapadocja → Stambuł</span>
+            <span class="note">Pełny dzień w Kapadocji, lot dopiero wieczorem. Powrót na SAW.</span>
+          </div>
         </div>
-        <div class="stamp">bilet online / na miejscu</div>
+        <div class="tag">do rezerwacji</div>
       </div>
 
       <div class="flight rv">
         <div class="body">
           <div class="leg">
-            <div class="pt"><div class="time">17:55</div><div class="code">ASR</div></div>
-            <div class="path"><div class="dur">1h25</div><div class="ln"></div><div class="dur">bezpośredni</div></div>
-            <div class="pt"><div class="time">19:20</div><div class="code">SAW</div></div>
+            <div class="pt"><div class="time">wiecz.</div><div class="code">IST</div></div>
+            <div class="path"><div class="dur">~2h45</div><div class="ln"></div><div class="dur">bezpośredni</div></div>
+            <div class="pt"><div class="time">noc</div><div class="code">GDN</div></div>
           </div>
           <div class="meta">
-            <span class="when">sob 03.10 · Pegasus</span>
-            <span class="car">Kapadocja (Kayseri) → Stambuł</span>
-            <span class="note">Pełny bagaż w cenie. Ląduje na SAW (strona azjatycka).</span>
-          </div>
-        </div>
-        <div class="tag">zarezerwowany</div>
-      </div>
-
-      <div class="flight rv">
-        <div class="body">
-          <div class="leg">
-            <div class="pt"><div class="time">21:25</div><div class="code">IST</div></div>
-            <div class="path"><div class="dur">2h45</div><div class="ln"></div><div class="dur">bezpośredni</div></div>
-            <div class="pt"><div class="time">23:10</div><div class="code">GDN</div></div>
-          </div>
-          <div class="meta">
-            <span class="when">pon 05.10 · LOT</span>
+            <span class="when">śr 30.09 · LOT</span>
             <span class="car">Stambuł → Gdańsk</span>
-            <span class="note">Odlot wieczorem z IST (strona europejska).</span>
+            <span class="note">Środa = dzień bezpośredniego LOT. Odlot z IST.</span>
           </div>
         </div>
-        <div class="tag">zarezerwowany</div>
+        <div class="tag">do rezerwacji</div>
       </div>
 
     </div>
 
     <div class="pricebar rv">
-      <span class="pp">LOT tam i z powrotem (3 os.): <b>2 857 zł</b> <span class="x">+ 111 zł/os. serwisowej</span></span>
-      <span class="pp">Pegasus Kayseri → Stambuł (3 os.): <b>665 zł</b> <span class="x">+ 48 zł/os. serwisowej</span> <span class="ok">· pełny bagaż</span></span>
-      <span class="pp"><span class="ok">+ pociąg YHT i autobus — tanio, dokupisz w trasie</span></span>
+      <span><b>AJet Stambuł ↔ Kapadocja (3 os., w obie strony): 1 410 zł</b> <span class="x">+ 71 zł/os. serwisowej · w cenie tylko mała torba</span></span>
+      <span><b>LOT Gdańsk ↔ Stambuł:</b> do dobrania pod 23/30.09. <span class="ok">Oba dni to środy — dni bezpośredniego LOT-u; godziny potwierdź na lot.com.</span></span>
     </div>
   </div>
 </section>
@@ -299,10 +223,9 @@
 <!-- ITINERARY -->
 <section style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
-    <div class="sec-head rv"><span class="idx">02</span><div><h2>Dzień po dniu</h2><p>Stambuł 3 noce → Ankara 1 → Kapadocja 4 → Stambuł 2.</p></div></div>
+    <div class="sec-head rv"><span class="idx">02</span><div><h2>Dzień po dniu</h2><p>Stambuł 3 noce → Kapadocja 3 → Stambuł 1. Loty wieczorem, więc 26.09 i 29.09 zostają pełnymi dniami.</p></div></div>
     <div class="legend rv">
       <span><i class="dot c-ist"></i> Stambuł</span>
-      <span><i class="dot c-ank"></i> Ankara</span>
       <span><i class="dot c-cap"></i> Kapadocja</span>
       <span><i class="dot c-fly"></i> Dzień transferowy</span>
     </div>
@@ -310,74 +233,55 @@
     <div class="timeline">
 
       <div class="day ist fly rv">
-        <div class="top"><span class="date">25.09</span><span class="dow">piątek</span><span class="where w-ist">Stambuł</span></div>
+        <div class="top"><span class="date">23.09</span><span class="dow">środa</span><span class="where w-ist">Stambuł</span></div>
         <h3>Przylot</h3>
         <p>Lądowanie wieczorem, transfer do hotelu (Sultanahmet albo Karaköy / Beyoğlu), kolacja, odpoczynek.</p>
-        <span class="air">GDN 16:50 → IST 20:35 · LOT</span>
+        <span class="air">GDN → IST · LOT</span>
       </div>
 
       <div class="day ist rv">
-        <div class="top"><span class="date">26.09</span><span class="dow">sobota</span><span class="where w-ist">Stambuł</span></div>
+        <div class="top"><span class="date">24.09</span><span class="dow">czwartek</span><span class="where w-ist">Stambuł</span></div>
         <h3>Stara część</h3>
         <p>Hagia Sophia, Błękitny Meczet, Cysterna Bazyliki, Pałac Topkapı, Wielki Bazar — wszystko pieszo w Sultanahmet.</p>
       </div>
 
       <div class="day ist rv">
-        <div class="top"><span class="date">27.09</span><span class="dow">niedziela</span><span class="where w-ist">Stambuł</span></div>
-        <h3>Bosfor</h3>
+        <div class="top"><span class="date">25.09</span><span class="dow">piątek</span><span class="where w-ist">Stambuł</span></div>
+        <h3>Bosfor i nowe dzielnice</h3>
         <p>Rejs po Bosforze, Pałac Dolmabahçe, wieża i dzielnica Galata, wieczór na İstiklal w Beyoğlu.</p>
       </div>
 
-      <div class="day ank fly rv">
-        <div class="top"><span class="date">28.09</span><span class="dow">poniedziałek</span><span class="where w-ank">Ankara</span></div>
-        <h3>Pociągiem do stolicy</h3>
-        <p>Rano lekko w Stambule (Spice Bazaar lub strona azjatycka blisko stacji), w okolicach południa pociąg YHT z Söğütlüçeşme. Wieczorem Muzeum Cywilizacji Anatolijskich lub zamek. Nocleg w Ankarze.</p>
-        <span class="air">YHT Söğütlüçeşme → Ankara · ~4,5 h</span>
-      </div>
-
-      <div class="day cap fly rv">
-        <div class="top"><span class="date">29.09</span><span class="dow">wtorek</span><span class="where w-cap">Kapadocja</span></div>
-        <h3>Anıtkabir, potem na wschód</h3>
-        <p>Rano mauzoleum Atatürka (i muzeum, jeśli zostało z wczoraj). Wczesnym popołudniem autobus do Göreme (~4 h). Wieczór w Kapadocji.</p>
-        <span class="air">Autobus Ankara → Göreme · ~4 h</span>
+      <div class="day fly rv">
+        <div class="top"><span class="date">26.09</span><span class="dow">sobota</span><span class="where w-fly">Stambuł → Kapadocja</span></div>
+        <h3>Pełny dzień w Stambule, wieczorem lot</h3>
+        <p>Strona azjatycka (Kadıköy, Üsküdar) albo Balat / Fener. Około 16:00 transfer na SAW, wieczorny lot, nocny przyjazd do Göreme.</p>
+        <span class="air">SAW 20:00 → NAV 21:15 · AJet</span>
       </div>
 
       <div class="day cap rv">
-        <div class="top"><span class="date">30.09</span><span class="dow">środa</span><span class="where w-cap">Kapadocja</span></div>
+        <div class="top"><span class="date">27.09</span><span class="dow">niedziela</span><span class="where w-cap">Kapadocja</span></div>
         <h3>Balon o świcie</h3>
         <p>Lot balonem na pierwszy pełny poranek — zostawia bufor na kolejne dni. Potem Muzeum na Wolnym Powietrzu w Göreme i okoliczne doliny.</p>
       </div>
 
       <div class="day cap rv">
-        <div class="top"><span class="date">01.10</span><span class="dow">czwartek</span><span class="where w-cap">Kapadocja</span></div>
-        <h3>Podziemia i widoki</h3>
+        <div class="top"><span class="date">28.09</span><span class="dow">poniedziałek</span><span class="where w-cap">Kapadocja</span></div>
+        <h3>Podziemia i doliny</h3>
         <p>Podziemne miasto (Derinkuyu lub Kaymaklı), zamek w Uçhisar, dolina Pigeon, zachód słońca w Red / Rose Valley.</p>
       </div>
 
-      <div class="day cap rv">
-        <div class="top"><span class="date">02.10</span><span class="dow">piątek</span><span class="where w-cap">Kapadocja</span></div>
-        <h3>Doliny / dzień rezerwowy</h3>
-        <p>Trekking (Ihlara, Love Valley) albo jeep / quad. Rezerwowy poranek na balon, jeśli pogoda pokrzyżuje plany w środę.</p>
+      <div class="day fly rv">
+        <div class="top"><span class="date">29.09</span><span class="dow">wtorek</span><span class="where w-fly">Kapadocja → Stambuł</span></div>
+        <h3>Pełny dzień w Kapadocji, nocą powrót</h3>
+        <p>Trekking (Ihlara, Love Valley) albo jeep / quad. Rezerwowy poranek na balon, jeśli wcześniej nie wyszło. Wieczorem lot, nocny powrót do Stambułu.</p>
+        <span class="air">NAV 21:45 → SAW 23:15 · AJet</span>
       </div>
 
       <div class="day ist fly rv">
-        <div class="top"><span class="date">03.10</span><span class="dow">sobota</span><span class="where w-ist">Stambuł</span></div>
-        <h3>Powrót do Stambułu</h3>
-        <p>Rano ostatnie doliny / zakupy. Około 15:00 transfer na lotnisko Kayseri (~1 h od Göreme), wieczorny lot, nocleg w Stambule.</p>
-        <span class="air">ASR 17:55 → SAW 19:20 · Pegasus</span>
-      </div>
-
-      <div class="day ist rv">
-        <div class="top"><span class="date">04.10</span><span class="dow">niedziela</span><span class="where w-ist">Stambuł</span></div>
-        <h3>Dogrywka</h3>
-        <p>Co nie weszło na początku: meczet Süleymaniye, dzielnice Balat / Fener, hammam, zakupy, spokojny ostatni dzień.</p>
-      </div>
-
-      <div class="day fly rv">
-        <div class="top"><span class="date">05.10</span><span class="dow">poniedziałek</span><span class="where w-fly">Powrót</span></div>
-        <h3>Stambuł → dom</h3>
-        <p>Bufor i ostatni poranek w mieście, wieczorem powrót do Gdańska. Pamiętaj: odlot z IST (Europa), nie SAW.</p>
-        <span class="air">IST 21:25 → GDN 23:10 · LOT</span>
+        <div class="top"><span class="date">30.09</span><span class="dow">środa</span><span class="where w-ist">Stambuł</span></div>
+        <h3>Ostatni dzień i powrót</h3>
+        <p>Dogrywka w mieście: Spice Bazaar, Süleymaniye, Balat / Fener, hammam, zakupy. Wieczorem lot do Gdańska z IST.</p>
+        <span class="air">IST → GDN · LOT</span>
       </div>
 
     </div>
@@ -387,37 +291,37 @@
 <!-- ALERTS -->
 <section>
   <div class="wrap">
-    <div class="sec-head rv"><span class="idx">03</span><div><h2>Na co uważać</h2><p>Loty są domknięte — zostaje kilka drobiazgów.</p></div></div>
+    <div class="sec-head rv"><span class="idx">03</span><div><h2>Na co uważać</h2><p>Wieczorne loty wygrywają dni, ale kosztują dwie późne noce.</p></div></div>
     <div class="alerts">
       <div class="alert good rv">
-        <div class="k">Bagaż</div>
-        <h4>Pegasus z pełnym bagażem</h4>
-        <p>Kayseri → Stambuł ma w cenie małą torbę, podręczny i rejestrowany. Uwaga na LOT — tam tylko mała torba + podręczny, więc rejestrowany dokup osobno, jeśli będzie potrzebny.</p>
+        <div class="k">Plus wieczornych lotów</div>
+        <h4>Pełne dni 26 i 29.09</h4>
+        <p>Cały dzień 26.09 zostaje w Stambule, a 29.09 w Kapadocji — przeloty zjadają wieczory zamiast dni zwiedzania.</p>
       </div>
-      <div class="alert rv">
-        <div class="k">Zdążyć na lot</div>
-        <h4>03.10 wyjazd z Göreme ~15:00</h4>
-        <p>Lotnisko Kayseri (ASR) jest ~1 h od Göreme, a lot startuje 17:55. Zostaw zapas na transfer i odprawę.</p>
-      </div>
-      <div class="alert rv">
+      <div class="alert hot rv">
         <div class="k">Lotniska</div>
-        <h4>Powrót ląduje na SAW, dom z IST</h4>
-        <p>Pegasus przylatuje na SAW (Azja) 03.10, a lot do Gdańska 05.10 wychodzi z IST (Europa). Dwie noce przerwy, więc bez ryzyka — tylko zaplanuj ostatni dojazd na właściwy port.</p>
+        <h4>SAW kontra IST</h4>
+        <p>Loty wewnętrzne są z/na SAW (Azja), a LOT z/na IST (Europa). 26.09 zostaw ~1,5–2 h na dojazd na SAW z europejskiej strony.</p>
+      </div>
+      <div class="alert hot rv">
+        <div class="k">Późne przyloty</div>
+        <h4>Noclegi z late check-in</h4>
+        <p>26.09 dotrzesz do Göreme ok. 22:00, a 29.09 do hotelu w Stambule grubo po północy. Zarezerwuj późne zameldowanie i zamów transfery z góry.</p>
+      </div>
+      <div class="alert good rv">
+        <div class="k">Nevşehir</div>
+        <h4>Blisko Göreme</h4>
+        <p>NAV jest tylko ~30–40 min od Göreme (bliżej niż Kayseri) — krótki nocny transfer po późnym lądowaniu.</p>
       </div>
       <div class="alert rv">
         <div class="k">Balon</div>
-        <h4>Leć przy pierwszej okazji</h4>
-        <p>Rezerwuj na 30.09 (pierwszy pełny poranek). 01–02.10 zostają jako zapas — wrzesień/październik to dobry sezon, ale odwołania pogodowe bywają.</p>
+        <h4>Trzy szanse</h4>
+        <p>Rezerwuj na 27.09 (pierwszy poranek), z zapasem na 28 i 29.09. Wrzesień to dobry sezon, ale odwołania pogodowe bywają.</p>
       </div>
       <div class="alert rv">
-        <div class="k">Pociąg</div>
-        <h4>YHT z azjatyckiej strony</h4>
-        <p>Odjazd ze stacji Söğütlüçeşme (blisko Kadıköy). Bilety puszczają ok. 15 dni przed — kup z wyprzedzeniem, miejsca schodzą.</p>
-      </div>
-      <div class="alert rv">
-        <div class="k">Opłaty</div>
-        <h4>Serwisowe poza ceną</h4>
-        <p>Do biletów dochodzi 111 zł/os. (LOT) i 48 zł/os. (Pegasus) opłaty serwisowej — widać ją dopiero w podsumowaniu.</p>
+        <div class="k">Bagaż</div>
+        <h4>AJet tylko mała torba</h4>
+        <p>W cenie AJet jest sama mała torba — dokup bagaż online albo spakujcie się bardzo lekko. Do tego 71 zł/os. opłaty serwisowej.</p>
       </div>
     </div>
   </div>
@@ -430,18 +334,18 @@
       <div class="rv">
         <div class="sec-head"><span class="idx">04</span><div><h2>Co rezerwować</h2></div></div>
         <ol class="steps">
-          <li><b>Balon + hotel w Kapadocji</b> — sloty i dobre jaskiniowe hotele schodzą najszybciej.</li>
-          <li><b>Hotele w Stambule i Ankarze</b> — Ankara na 28.09, blisko dworca.</li>
-          <li><b>YHT Stambuł → Ankara</b> — bilety ok. 15 dni przed odjazdem.</li>
-          <li><b>Autobus Ankara → Göreme</b> — online (obilet.com) lub na dworcu AŞTİ.</li>
-          <li><b>Bagaż rejestrowany na LOT</b> — taniej dokupić online niż na lotnisku.</li>
+          <li><b>Loty GDN ↔ IST na 23 i 30.09</b> — pod nowe okno, potwierdź godziny.</li>
+          <li><b>AJet SAW ↔ NAV (26 i 29.09)</b> — wieczorne, 1 410 zł / 3 os.</li>
+          <li><b>Balon + hotel w Kapadocji</b> — z late check-in na 26.09.</li>
+          <li><b>Hotel w Stambule</b> — blisko Sultanahmet lub Beyoğlu.</li>
+          <li><b>Bagaż i transfery lotniskowe</b> — zwłaszcza dojazd na SAW.</li>
         </ol>
       </div>
       <div class="rv">
         <div class="sec-head"><span class="idx">05</span><div><h2>Dobrze wiedzieć</h2></div></div>
         <dl class="info">
           <div><dt>Dokumenty</dt><dd>Paszport ważny min. 6 mies., pobyt bezwizowy do 90 dni.</dd></div>
-          <div><dt>Pogoda</dt><dd>Stambuł w październiku ~16 °C, możliwy deszcz. Kapadocja: zimne świty (balon).</dd></div>
+          <div><dt>Pogoda</dt><dd>Stambuł końcem września ~22 °C, ciepło. Kapadocja: chłodne świty (balon).</dd></div>
           <div><dt>Czas</dt><dd>+1 h względem Polski.</dd></div>
           <div><dt>Prąd</dt><dd>Gniazdka jak w Polsce (C/F, 230 V) — bez przejściówki.</dd></div>
           <div><dt>Łączność</dt><dd>Lokalny eSIM; w Stambule karta IstanbulKart na komunikację.</dd></div>
@@ -453,8 +357,8 @@
 
 <footer>
   <div class="wrap">
-    <span>Turcja · 25.09–5.10.2026 · 3 osoby</span>
-    <span>GDN → Stambuł → Ankara → Kapadocja → GDN</span>
+    <span>Turcja · 23–30.09.2026 · 3 osoby</span>
+    <span>GDN → Stambuł → Kapadocja → GDN</span>
   </div>
 </footer>
 
